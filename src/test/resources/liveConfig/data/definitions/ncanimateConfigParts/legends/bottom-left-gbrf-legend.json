@@ -1,0 +1,38 @@
+{
+    "_id": {
+        "id": "bottom-left-gbrf-legend",
+        "datatype": "LEGEND"
+    },
+    "lastModified": "2020-10-01T11:15:00.000+08:00",
+
+    "colourBandWidth": 20,
+    "colourBandHeight": 300,
+    "backgroundColour": "#FFFFFF00",
+    "steps": 7,
+    "position": {
+        "bottom": 140,
+        "left": 80
+    },
+    "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+    },
+    "title": {
+        "fontColour": "#00000099",
+        "fontSize": 16,
+        "bold": true,
+        "position": {
+            "top": 10
+        }
+    },
+    "label": {
+        "fontColour": "#00000099",
+        "fontSize": 14,
+        "position": {
+            "left": 5,
+            "bottom": 5
+        }
+    }
+}

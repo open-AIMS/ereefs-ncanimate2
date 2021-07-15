@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "lizard-island-3",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-03-13T16:30:00.000+08:00",
+
+    "label": "Lizard Island",
+    "scale": 3,
+    "bbox": {
+        "east": 146.711718107339,
+        "north": -12.7430691853101,
+        "south": -16.5525246722137,
+        "west": 144.236462706524
+    }
+}

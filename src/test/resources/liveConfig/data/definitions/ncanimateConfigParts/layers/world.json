@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "world",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2019-08-08T16:40:00.000+08:00",
+
+    "datasource": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/layers/World_NE_10m_admin_0_countries_V3-1.geojson",
+    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/World_NE_10m_admin_0_countries_V3-1.sld",
+    "type": "GEOJSON"
+}

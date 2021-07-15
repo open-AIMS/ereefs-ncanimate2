@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/cs_chl",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-08-18T19:00:00.000+08:00",
+
+    "variableId": "CS_Chl",
+    "legend": {
+        "title": { "text": "Coral symbiont Chl (mg Chl m-2)" },
+        "steps": 5
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 0,
+    "scaleMax": 2
+}

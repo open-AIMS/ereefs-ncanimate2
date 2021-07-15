@@ -1,0 +1,83 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_bgc_baseline__din_no3_nh4_monthly",
+    "version": "2.0",
+    "lastModified": "2020-08-18T19:00:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2"
+    ],
+
+    "targetHeights": [-1.5],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom MMMM_yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "DIN",
+            "title": {
+                "text": "Dissolved Inorganic Nitrogen ${ctx.targetHeight %.1f}m",
+                "fontSize": 22
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/din"
+                }
+            }
+        },
+        {
+            "id": "NO3",
+            "title": { "text": "Nitrate ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/no3"
+                }
+            }
+        },
+        {
+            "id": "NH4",
+            "title": { "text": "Ammonia ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/nh4"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr4_bgc_baseline__din_no3_nh4"
+    }
+}

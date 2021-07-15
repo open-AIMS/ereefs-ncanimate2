@@ -1,0 +1,97 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_bgc_baseline__secchi_kd-490_epipar-sg_monthly",
+    "version": "2.0",
+    "lastModified": "2020-09-30T18:00:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2"
+    ],
+
+    "targetHeights": [-1.5],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom MMMM_yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "Secchi",
+            "title": { "text": "Secchi depth" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "variable": "ereefs/bgc/secchi"
+                }
+            }
+        },
+        {
+            "id": "Kd_490",
+            "title": {
+                "text": "Vertical attenuation at 490nm, ${ctx.targetHeight %.1f}m",
+                "fontSize": 22
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/kd_490"
+                }
+            }
+        },
+        {
+            "id": "EpiPAR_sg",
+            "title": {
+                "text": "Light intensity above seagrass",
+                "fontSize": 24
+            },
+            "layers": [
+                {
+                    "id": "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly",
+                    "variable": "ereefs/bgc/epipar_sg"
+                },
+                "world",
+                "australia",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr4_bgc_baseline__secchi_kd-490_epipar-sg",
+
+        "metadata": {
+            "properties": {
+                "targetHeight": "N/A"
+            }
+        }
+    }
+}

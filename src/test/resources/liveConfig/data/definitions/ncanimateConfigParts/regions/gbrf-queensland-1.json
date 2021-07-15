@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "gbrf-queensland-1",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-09-30T18:00:00.000+08:00",
+
+    "label": "Queensland",
+    "scale": 1,
+    "bbox": {
+        "east": 169.4,
+        "north": -7.4,
+        "south": -29,
+        "west": 131
+    }
+}

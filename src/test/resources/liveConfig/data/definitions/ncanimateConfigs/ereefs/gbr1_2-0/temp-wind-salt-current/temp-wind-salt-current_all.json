@@ -1,0 +1,114 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr1_2-0__temp-wind-salt-current_all",
+    "version": "2.0",
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+    "enabled": false,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2",
+        "torres-strait-3",
+        "princess-charlotte-bay-3",
+        "lizard-island-3",
+        "cairns-3",
+        "townsville-3",
+        "whitsundays-3",
+        "broad-sound-3",
+        "fitzroy-3",
+        "hervey-bay-3",
+        "brisbane-3",
+        "keppels-4",
+        "moreton-bay-4",
+        "townsville-4",
+        "whitsundays-4",
+        "cairns-4",
+        "lizard-island-4",
+        "heron-4"
+    ],
+
+    "targetHeights": [-2.35, -9],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "hidden": true
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr1_2-0_all",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "temp",
+            "title": { "text": "Temperature ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr1_2-0_all": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/temp"
+                }
+            }
+        },
+        {
+            "id": "wind",
+            "title": { "text": "Wind speed" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr1_2-0_all": {
+                    "variable": "ereefs/hydro/wind",
+                    "arrowVariable": "ereefs/hydro/wind"
+                }
+            }
+        },
+        {
+            "id": "salt",
+            "title": {"text": "Salinity ${ctx.targetHeight %.1f}m"},
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr1_2-0_all": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/salt"
+                }
+            }
+        },
+        {
+            "id": "current",
+            "title": {"text": "Current ${ctx.targetHeight %.1f}m"},
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr1_2-0_all": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr1_2-0__temp-wind-salt-current",
+
+        "metadata": {
+            "properties": {
+                "targetHeight": "${ctx.targetHeight %.1f}m"
+            }
+        }
+    }
+}

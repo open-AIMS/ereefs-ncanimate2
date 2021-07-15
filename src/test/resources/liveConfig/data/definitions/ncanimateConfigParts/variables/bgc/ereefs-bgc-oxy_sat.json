@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/oxy_sat",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-08-18T19:00:00.000+08:00",
+
+    "variableId": "Oxy_sat",
+    "legend": {
+        "title": { "text": "Oxygen saturation percentage" },
+        "steps": 9
+    },
+    "colourPaletteName": "Blue25Red75Rainbow-inv",
+    "scaleMin": 30,
+    "scaleMax": 110
+}

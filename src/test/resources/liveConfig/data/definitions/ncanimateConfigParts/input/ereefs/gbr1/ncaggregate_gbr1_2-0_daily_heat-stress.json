@@ -1,0 +1,17 @@
+{
+    "_id": {
+        "id": "products__ncaggregate__ereefs__gbr1_2-0-heat_stress-daily-monthly",
+        "datatype": "INPUT"
+    },
+    "lastModified": "2020-09-07T13:10:00.000+08:00",
+
+    "timeIncrement": {
+        "increment": 1,
+        "unit": "DAY"
+    },
+    "licence": "CC-BY 4.0",
+    "authors": [
+        "AIMS",
+        "eReefs CSIRO GBR1 Hydrodynamic Model v2.0"
+    ]
+}

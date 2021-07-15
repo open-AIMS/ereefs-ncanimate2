@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "broad-sound-3",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-03-13T16:30:00.000+08:00",
+
+    "label": "Broad Sound",
+    "scale": 3,
+    "bbox": {
+        "east": 151.472818304794,
+        "north": -19.7843048535427,
+        "south": -23.5937603404462,
+        "west": 148.99756290398
+    }
+}

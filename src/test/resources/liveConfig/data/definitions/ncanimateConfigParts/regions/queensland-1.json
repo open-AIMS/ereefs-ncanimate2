@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "queensland-1",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-03-13T16:30:00.000+08:00",
+
+    "label": "Queensland",
+    "scale": 1,
+    "bbox": {
+        "east": 156.570062893342,
+        "north": -7.38712861975422,
+        "south": -29.2584086447012,
+        "west": 142.358682747285
+    }
+}

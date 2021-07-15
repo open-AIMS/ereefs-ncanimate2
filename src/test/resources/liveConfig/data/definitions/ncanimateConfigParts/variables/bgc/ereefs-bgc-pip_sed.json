@@ -1,0 +1,18 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/pip_sed",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-08-18T19:00:00.000+08:00",
+
+    "variableId": "PIP_sed",
+    "legend": {
+        "title": {
+            "text": "Particulate Inorganic\nPhos. sed. (mg P m-3)",
+            "fontSize": 15
+        }
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 0,
+    "scaleMax": 6000
+}

@@ -1,0 +1,184 @@
+{
+    "_id": "gbr4_gbr1_combined_temp-wind-salt-current",
+    "version": "2.0",
+    "lastModified": "2019-08-15T12:25:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "qld",
+        "brisbane"
+    ],
+
+    "targetHeights": [-1.5],
+    //"targetHeights": [-1.5, -17.75, -49],
+    //"targetHeights": [-103, -200, -315],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "fromToDate": {
+                // Australian Eastern Standard Time
+                "text": "${ctx.frameDateFrom dd-MMM-yyyy} ${ctx.frameDateFrom HH:mm} - ${ctx.frameDateTo HH:mm} AEST",
+                "fontSize": 25,
+                "bold": true,
+                "position": {
+                    "top": 28
+                }
+            },
+            "frameDate": { "hidden": true },
+            "authors": {
+                "italic": true
+            },
+
+            "layerHeights": {
+                "text": "GBR1: ${layerCtx.ereefs-model_gbr1_2-0.targetHeight}m, GBR4: ${layerCtx.ereefs-model_gbr4-v2.targetHeight}m",
+                "fontSize": 15,
+                "position": {
+                    "bottom": 16,
+                    "left": 16
+                }
+            }
+
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ereefs-model_gbr4-v2",
+                "ereefs-model_gbr1_2-0",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "catchments",
+                "GBRMPA_Bounds",
+                "rivers",
+                {
+                    "id": "cities",
+                    "style": "/tmp/ncanimateTests/s3/styles/World_NE_10m-cities_V3_Ranked_${ctx.region.id}.sld"
+                }
+            ]
+        },
+        "legend": {
+            "colourBandWidth": 20,
+            "colourBandHeight": 300,
+            "position": {
+                "bottom": 5,
+                "left": 5
+            },
+            "title": {
+                "fontColour": "#000000",
+                "fontSize": 16,
+                "bold": true,
+                "position": {
+                    "top": 10
+                }
+            },
+            "label": {
+                "fontSize": 14,
+                "position": {
+                    "left": 5,
+                    "bottom": 5
+                }
+            }
+        }
+    },
+
+    "panels": [
+        {
+            "id": "temp",
+            "title": { "text": "Temperature ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ereefs-model_gbr4-v2": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/temp"
+                },
+                "ereefs-model_gbr1_2-0": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/temp"
+                }
+            }
+        },
+        {
+            "title": { "text": "Wind speed" },
+            "layerOverwrites": {
+                "ereefs-model_gbr4-v2": {
+                    "variable": "ereefs/hydro/wind",
+                    "arrowSize": 10
+                },
+                "ereefs-model_gbr1_2-0": {
+                    "variable": "ereefs/hydro/wind",
+                    "arrowSize": 10
+                }
+            }
+        },
+        {
+            "title": {"text": "Salinity ${ctx.targetHeight %.1f}m"},
+            "layerOverwrites": {
+                "ereefs-model_gbr4-v2": {
+                    "variable": "ereefs/hydro/salt"
+                },
+                "ereefs-model_gbr1_2-0": {
+                    "variable": "ereefs/hydro/salt"
+                }
+            }
+        },
+        {
+            "title": {"text": "Current ${ctx.targetHeight %.1f}m"},
+            "layerOverwrites": {
+                "ereefs-model_gbr4-v2": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current",
+                    "arrowSize": 10
+                },
+                "ereefs-model_gbr1_2-0": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current",
+                    "arrowSize": 10
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "ncanimateFrameJar": "../ereefs-ncanimate2-frame/target",
+
+        "workingDirectory": "/tmp/ncanimateTests/working",
+        "frameDirectoryUri": "/tmp/ncanimateTests/s3/ncanimate/frames/${id}",
+        "paletteDirectoryUri": "/tmp/ncanimateTests/s3/palettes",
+        "directoryUri": "/tmp/ncanimateTests/s3/ncanimate/products/${id}",
+        "timezone": "Australia/Brisbane",
+
+        "scale": 2,
+
+        "videoTimeIncrement": {
+            "increment": 1,
+            "unit": "DAY"
+        },
+
+        "videos": {
+            // NOTE: The blockSize attribute quantise the productWidth x productHeight values.
+            "mp4Video": {
+                "format": "MP4",
+                "fps": 12,
+                "blockSize": [16, 16],
+                "commandLines": [
+                    // https://ffmpeg.org/ffmpeg-filters.html#pad
+                    "/usr/bin/ffmpeg -y -r \"${ctx.renderFile.fps}\" -i \"${ctx.videoFrameDirectory}/${ctx.frameFilenamePrefix}_%05d.png\" -vcodec libx264 -profile:v baseline -pix_fmt yuv420p -crf 29 -vf \"pad=${ctx.productWidth}:${ctx.productHeight}:${ctx.padding.left}:${ctx.padding.top}:white\" \"${ctx.outputDirectory}/temp_${ctx.outputFilename}\"",
+                    "/usr/bin/qt-faststart \"${ctx.outputDirectory}/temp_${ctx.outputFilename}\" \"${ctx.outputFile}\"",
+                    "rm \"${ctx.outputDirectory}/temp_${ctx.outputFilename}\""
+                ]
+            },
+            "wmvVideo": {
+                "format": "WMV",
+                "fps": 10,
+                "commandLines": ["/usr/bin/ffmpeg -y -r \"${ctx.renderFile.fps}\" -i \"${ctx.videoFrameDirectory}/${ctx.frameFilenamePrefix}_%05d.png\" -qscale 10 -s ${ctx.productWidth}x${ctx.productHeight} \"${ctx.outputFile}\""],
+                "maxWidth": 1280
+            }
+        }
+    }
+}

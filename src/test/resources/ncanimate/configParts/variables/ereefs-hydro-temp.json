@@ -1,0 +1,15 @@
+{
+    "_id": {
+        "id": "ereefs/hydro/temp",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2019-09-06T16:40:00.000+08:00",
+
+    "variableId": "temp",
+    "legend": {
+        "title": { "text": "Temperature (°C)" }
+    },
+    "colourPaletteName": "x-Rainbow",
+    "scaleMin": 22,
+    "scaleMax": 34
+}

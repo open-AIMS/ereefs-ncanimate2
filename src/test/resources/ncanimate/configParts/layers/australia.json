@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "australia",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2019-08-15T12:25:00.000+08:00",
+
+    "datasource": "/tmp/ncanimateTests/s3/layers/AU_GA_GEODATA-TOPO-5M_aus5fgd_r.geojson",
+    "style": "/tmp/ncanimateTests/s3/styles/AU_GA_GEODATA-TOPO-5M_aus5fgd_r.sld",
+    "type": "GEOJSON"
+}

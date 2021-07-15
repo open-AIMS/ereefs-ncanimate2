@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/nh4",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "NH4",
+    "legend": {
+        "title": { "text": "Ammonia (mg N m-3)" },
+        "steps": 6
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 0,
+    "scaleMax": 5
+}

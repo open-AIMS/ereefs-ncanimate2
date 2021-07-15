@@ -1,0 +1,15 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/mud_mineral",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "Mud-mineral",
+    "legend": {
+        "title": { "text": "Mud mineral (kg m-3)" }
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 0,
+    "scaleMax": 0.006
+}

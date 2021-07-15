@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "eAtlas_brightEarth",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2020-09-30T18:00:00.000+08:00",
+
+    "type": "WMS",
+    "server": "https://maps.eatlas.org.au/maps/ows",
+    "layerName": "ea-be:World_Bright-Earth-e-Atlas-basemap_Dark_No-Labels"
+}

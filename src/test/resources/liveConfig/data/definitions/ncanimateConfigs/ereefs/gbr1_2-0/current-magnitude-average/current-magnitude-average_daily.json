@@ -1,0 +1,77 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr1_2-0__current-magnitude-average_daily",
+    "version": "2.0",
+    "lastModified": "2020-09-29T09:00:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2",
+        "torres-strait-3",
+        "princess-charlotte-bay-3",
+        "lizard-island-3",
+        "cairns-3",
+        "townsville-3",
+        "whitsundays-3",
+        "broad-sound-3",
+        "fitzroy-3",
+        "hervey-bay-3",
+        "brisbane-3",
+        "keppels-4",
+        "moreton-bay-4",
+        "townsville-4",
+        "whitsundays-4",
+        "cairns-4",
+        "lizard-island-4",
+        "heron-4"
+    ],
+
+    "targetHeights": [-2.35],
+
+    "canvas": {
+        "id": "one-panel-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom dd-MMM-yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr1_2-0_daily",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "mean_cur",
+            "title": { "text": "Current magnitude ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr1_2-0_daily": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ncaggregate/ereefs/hydro/mean_cur"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "yearly-videos",
+        "definitionId": "products__ncanimate__ereefs__gbr1_2-0__current-magnitude-average"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/omega_ar",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-08-19T08:00:00.000+08:00",
+
+    "variableId": "omega_ar",
+    "legend": {
+        "title": { "text": "Aragonite saturation state" },
+        "steps": 5
+    },
+    "colourPaletteName": "Blue50Red50Rainbow-inv",
+    "scaleMin": 2,
+    "scaleMax": 4
+}

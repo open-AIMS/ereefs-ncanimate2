@@ -1,0 +1,19 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/pip",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "PIP",
+    "legend": {
+        "title": {
+            "text": "Particulate Inorganic Phosphorus (mg P m-3)",
+            "fontSize": 11
+        },
+        "steps": 6
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 0,
+    "scaleMax": 0.5
+}

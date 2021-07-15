@@ -1,0 +1,76 @@
+{
+    "_id": "products__ncanimate__mixed__imos-vs-ereefs-temperature",
+    "version": "2.0",
+    "lastModified": "2020-09-03T15:00:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1"
+    ],
+
+    "targetHeights": [-1.5],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom dd-MMM-yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4-v2_daily",
+                "imos_SRS_SST_ghrsst_L3S_6d_ngt",
+                "imos_OceanCurrent_GSLA_NRT00",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "ereefs",
+            "title": { "text": "eReefs ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4-v2_daily": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/temp",
+                    "arrowVariable": "ereefs/hydro/current"
+                }
+            }
+        },
+        {
+            "id": "imos",
+            "title": { "text": "IMOS" },
+            "layerOverwrites": {
+                "imos_SRS_SST_ghrsst_L3S_6d_ngt": {
+                    "variable": "imos/sst"
+                },
+                "imos_OceanCurrent_GSLA_NRT00": {
+                    "arrowVariable": "imos/oceanCurrent"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "yearly-videos",
+        "videos": {
+            "mp4Video": {
+                "fps": 5
+            }
+        }
+    }
+}

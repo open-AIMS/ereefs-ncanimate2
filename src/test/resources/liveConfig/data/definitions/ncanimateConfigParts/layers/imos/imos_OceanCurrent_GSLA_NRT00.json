@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "imos_OceanCurrent_GSLA_NRT00",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "input": "downloads__imos__OceanCurrent_GSLA_NRT00",
+    "type": "NETCDF",
+    "arrowSize": 10
+}

@@ -1,0 +1,103 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr1_2-0__current-multi-depth_hourly",
+    "version": "2.0",
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2",
+        "torres-strait-3",
+        "princess-charlotte-bay-3",
+        "lizard-island-3",
+        "cairns-3",
+        "townsville-3",
+        "whitsundays-3",
+        "broad-sound-3",
+        "fitzroy-3",
+        "hervey-bay-3",
+        "brisbane-3",
+        "keppels-4",
+        "moreton-bay-4",
+        "townsville-4",
+        "whitsundays-4",
+        "cairns-4",
+        "lizard-island-4",
+        "heron-4"
+    ],
+
+    "canvas": {
+        "id": "default-canvas"
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ereefs-model_gbr1_2-0",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "current-2_4",
+            "title": { "text": "Current -2.4m" },
+            "layerOverwrites": {
+                "ereefs-model_gbr1_2-0": {
+                    "targetHeight": -2.35,
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current"
+                }
+            }
+        },
+        {
+            "id": "current-18",
+            "title": { "text": "Current -18m" },
+            "layerOverwrites": {
+                "ereefs-model_gbr1_2-0": {
+                    "targetHeight": -18,
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current"
+                }
+            }
+        },
+        {
+            "id": "current-103",
+            "title": { "text": "Current -103m" },
+            "layerOverwrites": {
+                "ereefs-model_gbr1_2-0": {
+                    "targetHeight": -103,
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current"
+                }
+            }
+        },
+        {
+            "id": "wind",
+            "title": { "text": "Wind speed" },
+            "layerOverwrites": {
+                "ereefs-model_gbr1_2-0": {
+                    "variable": "ereefs/hydro/wind",
+                    "arrowVariable": "ereefs/hydro/wind"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-videos",
+        "definitionId": "products__ncanimate__ereefs__gbr1_2-0__current-multi-depth"
+    }
+}

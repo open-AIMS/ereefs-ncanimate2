@@ -1,0 +1,102 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_v2__current-multi-depth_shallow_annual",
+    "version": "2.0",
+    "lastModified": "2019-09-06T16:40:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "qld",
+        "torres-strait",
+        "cape-york",
+        "wet-tropics",
+        "burdekin",
+        "mackay-whitsunday",
+        "fitzroy",
+        "burnett-mary",
+        "brisbane"
+    ],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4-v2_annual",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "catchments",
+                "GBRMPA_Bounds",
+                "rivers",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "current-1_5",
+            "title": { "text": "Current -1.5m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4-v2_annual": {
+                    "targetHeight": -1.5,
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current"
+                }
+            }
+        },
+        {
+            "id": "current-18",
+            "title": { "text": "Current -18m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4-v2_annual": {
+                    "targetHeight": -17.75,
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current"
+                }
+            }
+        },
+        {
+            "id": "current-49",
+            "title": { "text": "Current -49m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4-v2_annual": {
+                    "targetHeight": -49,
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current"
+                }
+            }
+        },
+        {
+            "id": "wind",
+            "title": { "text": "Wind speed" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4-v2_annual": {
+                    "variable": "ereefs/hydro/wind",
+                    "arrowVariable": "ereefs/hydro/wind"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr4_v2__current-multi-depth",
+
+        "metadata": {
+            "properties": {
+                "targetHeight": "Shallow"
+            }
+        }
+    }
+}

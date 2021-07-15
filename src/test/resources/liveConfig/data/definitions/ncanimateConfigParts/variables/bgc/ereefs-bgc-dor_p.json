@@ -1,0 +1,19 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/dor_p",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "DOR_P",
+    "legend": {
+        "title": {
+            "text": "Dissolved Organic Phosphorus (mg P m-3)",
+            "fontSize": 10
+        },
+        "steps": 8
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 3,
+    "scaleMax": 10
+}

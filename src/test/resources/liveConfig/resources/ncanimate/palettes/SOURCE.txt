@@ -1,0 +1,2 @@
+The palettes files are develop and maintain in the following Git repository:
+https://github.com/aims-ks/ereefs-gbr-basemap-2020

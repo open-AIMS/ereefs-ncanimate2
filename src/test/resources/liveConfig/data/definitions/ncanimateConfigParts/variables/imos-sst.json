@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "imos/sst",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-09-30T18:00:00.000+08:00",
+
+    "variableId": "sea_surface_temperature",
+    "legend": {
+        "title": { "text": "Temperature (°K)" },
+        "steps": 8
+    },
+    "colourPaletteName": "Blue50Red50Rainbow",
+    "scaleMin": 293.15,
+    "scaleMax": 307.15
+}

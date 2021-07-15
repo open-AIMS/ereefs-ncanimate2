@@ -1,0 +1,12 @@
+{
+    "_id": {
+        "id": "rivers_label",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2020-03-26T12:00:00.000+08:00",
+    "datasource": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/layers/rivers_label.csv",
+    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/rivers_label_${ctx.region.id}.sld",
+    "type": "CSV",
+    "latitudeColumn": "label_latitude",
+    "longitudeColumn": "label_longitude"
+}

@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "GBRMPA_Bounds",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2019-08-15T12:25:00.000+08:00",
+
+    "datasource": "/tmp/ncanimateTests/s3/layers/GBR_e-Atlas-GBRMPA_GBRMP-bounds_Ocean-bounds_optimised.geojson",
+    "style": "/tmp/ncanimateTests/s3/styles/Polygon_Outline-Red.sld",
+    "type": "GEOJSON"
+}

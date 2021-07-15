@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "princess-charlotte-bay-3",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-03-13T16:30:00.000+08:00",
+
+    "label": "Princess Charlotte Bay",
+    "scale": 3,
+    "bbox": {
+        "east": 145.388736772421,
+        "north": -10.8439508174437,
+        "south": -14.6534063043472,
+        "west": 142.913481371606
+    }
+}

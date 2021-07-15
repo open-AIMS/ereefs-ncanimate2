@@ -1,0 +1,19 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/dor_n",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "DOR_N",
+    "legend": {
+        "title": {
+            "text": "Dissolved Organic Nitrogen (mg N m-3)",
+            "fontSize": 12
+        },
+        "steps": 8
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 40,
+    "scaleMax": 110
+}

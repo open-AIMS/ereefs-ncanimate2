@@ -1,0 +1,15 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/ph",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "PH",
+    "legend": {
+        "title": { "text": "PH (log(mM))" }
+    },
+    "colourPaletteName": "Blue50Red50Rainbow-inv",
+    "scaleMin": 7.9,
+    "scaleMax": 8.2
+}

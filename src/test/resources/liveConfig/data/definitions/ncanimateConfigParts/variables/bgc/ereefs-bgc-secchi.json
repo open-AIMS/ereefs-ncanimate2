@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/secchi",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-09-29T09:00:00.000+08:00",
+
+    "variableId": "Secchi",
+    "legend": {
+        "title": { "text": "Secchi depth (m)" },
+        "steps": 9
+    },
+    "colourPaletteName": "Blue75Red25Rainbow-inv",
+    "scaleMin": 0,
+    "scaleMax": 40
+}

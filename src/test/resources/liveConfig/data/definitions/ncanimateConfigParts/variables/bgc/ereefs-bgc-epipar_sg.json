@@ -1,0 +1,15 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/epipar_sg",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "EpiPAR_sg",
+    "legend": {
+        "title": { "text": "Light intensity above seagrass\n(mol photon m-2 d-1)" }
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 0,
+    "scaleMax": 40
+}

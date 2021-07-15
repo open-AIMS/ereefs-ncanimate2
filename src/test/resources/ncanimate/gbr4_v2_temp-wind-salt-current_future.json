@@ -1,0 +1,149 @@
+{
+    "_id": "gbr4_v2_temp-wind-salt-current_future",
+    "version": "2.0",
+    "lastModified": "2019-08-15T12:25:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "qld",
+        "torres-strait",
+        "cape-york",
+        "wet-tropics",
+        "burdekin",
+        "mackay-whitsunday",
+        "fitzroy",
+        "burnett-mary",
+        "brisbane"
+    ],
+
+    //"targetHeights": [-1.5, -17.75, -49],
+    //"targetHeights": [-103, -200, -315],
+    "targetHeights": [-3680, -3890],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "fromToDate": {
+                // Australian Eastern Standard Time
+                "text": "${ctx.frameDateFrom dd-MMM-yyyy} ${ctx.frameDateFrom HH:mm} - ${ctx.frameDateTo HH:mm} AEST",
+                "fontSize": 25,
+                "bold": true,
+                "position": {
+                    "top": 28
+                }
+            },
+            "frameDate": { "hidden": true },
+            "authors": {
+                "italic": true
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ereefs-model_gbr4-v2",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "catchments",
+                "GBRMPA_Bounds",
+                "rivers",
+                {
+                    "id": "cities",
+                    "style": "/tmp/ncanimateTests/s3/styles/World_NE_10m-cities_V3_Ranked_${ctx.region.id}.sld"
+                }
+            ]
+        },
+        "legend": {
+            "colourBandWidth": 20,
+            "colourBandHeight": 300,
+            "position": {
+                "bottom": 5,
+                "left": 5
+            },
+            "title": {
+                "fontColour": "#000000",
+                "fontSize": 16,
+                "bold": true,
+                "position": {
+                    "top": 10
+                }
+            },
+            "label": {
+                "fontSize": 14,
+                "position": {
+                    "left": 5,
+                    "bottom": 5
+                }
+            }
+        }
+    },
+
+    "panels": [
+        {
+            "id": "temp",
+            "title": { "text": "Temperature ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ereefs-model_gbr4-v2": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/temp"
+                }
+            }
+        },
+        {
+            "title": { "text": "Wind speed" },
+            "layerOverwrites": {
+                "ereefs-model_gbr4-v2": {
+                    "variable": "ereefs/hydro/wind",
+                    "arrowSize": 10
+                }
+            }
+        },
+        {
+            "title": {"text": "Salinity ${ctx.targetHeight %.1f}m"},
+            "layers": [
+//                "wms",
+                {
+                    "id": "ereefs-model_gbr4-v2",
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": {
+                        "id": "ereefs/hydro/salt",
+                        "colourPaletteName": "x-Rainbow-inv",
+                        "scaleMin": 2,
+                        "scaleMax": 100
+                    }
+                },
+                "reefs",
+                "coralSea",
+                "catchments",
+                "GBRMPA_Bounds",
+                "rivers",
+                "cities"
+            ]
+        },
+        {
+            "title": {"text": "TEST Current ${ctx.targetHeight %.1f}m"},
+            "layerOverwrites": {
+                "ereefs-model_gbr4-v2": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/current",
+                    "arrowVariable": "ereefs/hydro/current",
+                    "arrowSize": 10
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-render",
+
+        "startDate": "3050-01-01T00:00:00.000+10:00",
+        "endDate": "3051-01-01T00:00:00.000+10:00",
+
+        //"definitionId": "potato",
+        "scale": 0.5
+    }
+}

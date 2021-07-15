@@ -1,0 +1,48 @@
+{
+    "_id": {
+        "id": "default-videos",
+        "datatype": "RENDER"
+    },
+    "lastModified": "2019-08-08T16:40:00.000+08:00",
+
+    "ncanimateFrameJar": "../ereefs-ncanimate2-frame/target",
+
+    "workingDirectory": "/tmp/ncanimateTests/working",
+    "frameDirectoryUri": "/tmp/ncanimateTests/s3/ncanimate/frames/${id}",
+    "paletteDirectoryUri": "/tmp/ncanimateTests/s3/palettes",
+    "directoryUri": "/tmp/ncanimateTests/s3/ncanimate/products/${id}",
+    "timezone": "Australia/Brisbane",
+    "videoTimeIncrement": {
+        "increment": 1,
+        "unit": "MONTH"
+    },
+
+    "videos": {
+        "mp4Video": {
+            "format": "MP4",
+            "fps": 20,
+            "blockSize": [16, 16],
+            "commandLines": [
+                "/usr/bin/ffmpeg -y -r \"${ctx.renderFile.fps}\" -i \"${ctx.videoFrameDirectory}/${ctx.frameFilenamePrefix}_%05d.png\" -vcodec libx264 -profile:v baseline -pix_fmt yuv420p -crf 29 -vf \"pad=${ctx.productWidth}:${ctx.productHeight}:${ctx.padding.left}:${ctx.padding.top}:white\" \"${ctx.outputDirectory}/temp_${ctx.outputFilename}\"",
+                "/usr/bin/qt-faststart \"${ctx.outputDirectory}/temp_${ctx.outputFilename}\" \"${ctx.outputFile}\"",
+                "rm \"${ctx.outputDirectory}/temp_${ctx.outputFilename}\""
+            ]
+        },
+        "wmvVideo": {
+            "format": "WMV",
+            "fps": 20,
+            "commandLines": ["/usr/bin/ffmpeg -y -r \"${ctx.renderFile.fps}\" -i \"${ctx.videoFrameDirectory}/${ctx.frameFilenamePrefix}_%05d.png\" -qscale 10 -s ${ctx.productWidth}x${ctx.productHeight} \"${ctx.outputFile}\""],
+            "maxWidth": 1280
+        },
+        "zipArchive": {
+            "format": "ZIP"
+        }
+    },
+
+    "metadata": {
+        "properties": {
+            "targetHeight": "${ctx.targetHeight}",
+            "framePeriod": "${ctx.framePeriod}"
+        }
+    }
+}

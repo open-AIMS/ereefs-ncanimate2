@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "brisbane-3",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-03-13T16:30:00.000+08:00",
+
+    "label": "Brisbane",
+    "scale": 3,
+    "bbox": {
+        "east": 154.948343837636,
+        "north": -24.6072243823183,
+        "south": -28.4166798692219,
+        "west": 152.473088436821
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "_id": {
+        "id": "ncaggregate/ereefs/hydro/temp_range",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-05-11T12:00:00.000+08:00",
+
+    "variableId": "temp_range",
+    "legend": {
+        "title": { "text": "Temperature range (°C)" }
+    },
+    "colourPaletteName": "Blue50Red50Rainbow",
+    "scaleMin": 0,
+    "scaleMax": 1.5
+}

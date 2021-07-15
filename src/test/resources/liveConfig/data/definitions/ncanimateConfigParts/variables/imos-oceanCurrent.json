@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "imos/oceanCurrent",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-05-12T12:00:00.000+08:00",
+
+    "variableId": "UCUR:VCUR-group",
+    "scaleMin": 0,
+    "scaleMax": 0.8
+}

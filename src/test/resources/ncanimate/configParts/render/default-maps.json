@@ -1,0 +1,33 @@
+{
+    "_id": {
+        "id": "default-maps",
+        "datatype": "RENDER"
+    },
+    "lastModified": "2019-08-08T16:40:00.000+08:00",
+
+    "ncanimateFrameJar": "../ereefs-ncanimate2-frame/target",
+
+    "workingDirectory": "/tmp/ncanimateTests/working",
+    "frameDirectoryUri": "/tmp/ncanimateTests/s3/ncanimate/frames/${id}",
+    "paletteDirectoryUri": "/tmp/ncanimateTests/s3/palettes",
+    "directoryUri": "/tmp/ncanimateTests/s3/ncanimate/products/${id}",
+    "timezone": "Australia/Brisbane",
+
+    "scale": 2,
+
+    "maps": {
+        "svgMap": {
+            "format": "SVG"
+        },
+        "pngMap": {
+            "format": "PNG"
+        }
+    },
+
+    "metadata": {
+        "properties": {
+            "targetHeight": "${ctx.targetHeight}",
+            "framePeriod": "${ctx.framePeriod}"
+        }
+    }
+}

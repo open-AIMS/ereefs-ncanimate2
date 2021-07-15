@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "reefs",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2019-08-08T16:40:00.000+08:00",
+
+    "datasource": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/layers/GBR_AIMS_Reef-boundaries-3M_2016.geojson",
+    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/GBR_AIMS_Reef-boundaries-3M_2016.sld",
+    "type": "GEOJSON"
+}

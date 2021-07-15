@@ -1,0 +1,131 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr1_2-0__dhw_heatstress_monthly",
+    "version": "2.0",
+    "lastModified": "2020-12-09T11:30:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2",
+        "torres-strait-3",
+        "princess-charlotte-bay-3",
+        "lizard-island-3",
+        "cairns-3",
+        "townsville-3",
+        "whitsundays-3",
+        "broad-sound-3",
+        "fitzroy-3",
+        "hervey-bay-3",
+        "brisbane-3",
+        "keppels-4",
+        "moreton-bay-4",
+        "townsville-4",
+        "whitsundays-4",
+        "cairns-4",
+        "lizard-island-4",
+        "heron-4"
+    ],
+
+    "targetHeights": [-2.35, -9, -18, -31],
+
+    "canvas": {
+        "id": "default-canvas",
+
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom MMMM_yyyy}"
+            },
+            "authors": {
+                "text": "Data: ${layers.authors}, NESP TWQ 4.2"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr1_2-0_monthly",
+                "ncaggregate_ereefs-model_gbr1_2-0_nrt_monthly_heatstress",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "focusLayers": [
+        "ncaggregate_ereefs-model_gbr1_2-0_nrt_monthly_heatstress"
+    ],
+
+    "panels": [
+        {
+            "id": "dhw0_max",
+            "title": {
+                "text": "Max DHW #0 SSTAARS integrated at ${ctx.targetHeight %.1f}m",
+                "fontSize": 18
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr1_2-0_nrt_monthly_heatstress": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/dhw0_max"
+                }
+            },
+
+            "texts": {
+                "experimental": {
+                    "fontSize": 30,
+                    "fontColour": "#00000066",
+                    "bold": true,
+                    "text": "EXPERIMENTAL",
+                    "position": {
+                        "top": 200,
+                        "right": 30
+                    }
+                }
+            }
+        },
+        {
+            "id": "dhw1_max",
+            "title": {
+                "text": "Max DHW #1 NOAA 4am snapshot at ${ctx.targetHeight %.1f}m",
+                "fontSize": 18
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr1_2-0_nrt_monthly_heatstress": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/dhw1_max"
+                }
+            }
+        },
+        {
+            "id": "temp",
+            "title": { "text": "Temperature ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr1_2-0_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/temp"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr1_2-0__dhw",
+
+        "metadata": {
+            "properties": {
+                "targetHeight": "${ctx.targetHeight %.1f}m"
+            }
+        }
+    }
+}

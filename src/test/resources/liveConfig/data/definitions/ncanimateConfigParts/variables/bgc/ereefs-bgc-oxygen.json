@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/oxygen",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-08-18T19:00:00.000+08:00",
+
+    "variableId": "Oxygen",
+    "legend": {
+        "title": { "text": "Dissolved Oxygen (mg O m-3)" },
+        "steps": 5
+    },
+    "colourPaletteName": "Blue50Red50Rainbow-inv",
+    "scaleMin": 4000,
+    "scaleMax": 8000
+}

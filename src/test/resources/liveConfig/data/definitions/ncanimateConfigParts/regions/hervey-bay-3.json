@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "hervey-bay-3",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-03-13T16:30:00.000+08:00",
+
+    "label": "Hervey Bay",
+    "scale": 3,
+    "bbox": {
+        "east": 154.286853170177,
+        "north": -23.1135357783785,
+        "south": -26.922991265282,
+        "west": 151.811597769362
+    }
+}

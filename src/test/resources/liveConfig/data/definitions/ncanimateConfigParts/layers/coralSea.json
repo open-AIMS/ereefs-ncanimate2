@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "coralSea",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2019-08-08T16:40:00.000+08:00",
+
+    "datasource": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/layers/CoralSea_JCU_3DGBR_Geomorph_2012_3M.geojson",
+    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/CoralSea_JCU_3DGBR_Geomorph_2012_3M.sld",
+    "type": "GEOJSON"
+}

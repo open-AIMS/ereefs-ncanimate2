@@ -1,0 +1,15 @@
+{
+    "_id": {
+        "id": "ncaggregate/ereefs/hydro/fresh_water_exposure",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2019-09-06T16:40:00.000+08:00",
+
+    "variableId": "fresh_water_exposure",
+    "legend": {
+        "title": { "text": "Hours with salinity below 28 PSU" }
+    },
+    "colourPaletteName": "x-Rainbow",
+    "scaleMin": 0,
+    "scaleMax": 20
+}

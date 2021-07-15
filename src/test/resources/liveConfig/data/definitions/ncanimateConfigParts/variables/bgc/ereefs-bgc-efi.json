@@ -1,0 +1,18 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/efi",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "EFI",
+    "legend": {
+        "title": {
+            "text": "Total Suspended Solids (kg m-3)",
+            "fontSize": 15
+        }
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 0,
+    "scaleMax": 0.006
+}

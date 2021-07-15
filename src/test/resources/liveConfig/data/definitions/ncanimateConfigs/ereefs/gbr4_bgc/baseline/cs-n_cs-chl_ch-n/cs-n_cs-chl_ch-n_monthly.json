@@ -1,0 +1,81 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_bgc_baseline__cs-n_cs-chl_ch-n_monthly",
+    "version": "2.0",
+    "lastModified": "2020-07-28T12:00:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2"
+    ],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom MMMM_yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "CS_N",
+            "title": { "text": "Coral symbiont N" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "variable": "ereefs/bgc/cs_n"
+                }
+            }
+        },
+        {
+            "id": "CS_Chl",
+            "title": { "text": "Coral symbiont Chl" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "variable": "ereefs/bgc/cs_chl"
+                }
+            }
+        },
+        {
+            "id": "CH_N",
+            "title": { "text": "Coral host N" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "variable": "ereefs/bgc/ch_n"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr4_bgc_baseline__cs-n_cs-chl_ch-n",
+
+        "metadata": {
+            "properties": {
+                "targetHeight": "N/A"
+            }
+        }
+    }
+}

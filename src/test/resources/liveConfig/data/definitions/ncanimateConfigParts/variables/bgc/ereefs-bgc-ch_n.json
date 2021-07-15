@@ -1,0 +1,15 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/ch_n",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-08-18T19:00:00.000+08:00",
+
+    "variableId": "CH_N",
+    "legend": {
+        "title": { "text": "Coral host N (g N m-2)" }
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 0,
+    "scaleMax": 0.18
+}

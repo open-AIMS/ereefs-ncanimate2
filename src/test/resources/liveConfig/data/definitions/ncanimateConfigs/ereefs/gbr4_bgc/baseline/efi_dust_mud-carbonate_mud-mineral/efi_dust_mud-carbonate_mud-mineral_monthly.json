@@ -1,0 +1,93 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_bgc_baseline__efi_dust_mud-carbonate_mud-mineral_monthly",
+    "version": "2.0",
+    "lastModified": "2020-07-28T12:00:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2"
+    ],
+
+    "targetHeights": [-1.5],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom MMMM_yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "EFI",
+            "title": {
+                "text": "Total Suspended Solids ${ctx.targetHeight %.1f}m",
+                "fontSize": 26
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/efi"
+                }
+            }
+        },
+        {
+            "id": "Dust",
+            "title": { "text": "Dust ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/dust"
+                }
+            }
+        },
+        {
+            "id": "Mud_carbonate",
+            "title": { "text": "Mud carbonate ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/mud_carbonate"
+                }
+            }
+        },
+        {
+            "id": "Mud_mineral",
+            "title": { "text": "Mud mineral ${ctx.targetHeight %.1f}m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/mud_mineral"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr4_bgc_baseline__efi_dust_mud-carbonate_mud-mineral"
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_v2__temp-multi-depth_daily",
+    "version": "2.0",
+    "lastModified": "2020-07-28T12:00:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2",
+        "torres-strait-3",
+        "princess-charlotte-bay-3",
+        "lizard-island-3",
+        "cairns-3",
+        "townsville-3",
+        "whitsundays-3",
+        "broad-sound-3",
+        "fitzroy-3",
+        "hervey-bay-3",
+        "brisbane-3"
+    ],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom dd-MMM-yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4-v2_daily",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "temp-1_5",
+            "title": { "text": "Temperature -1.5m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4-v2_daily": {
+                    "targetHeight": -1.5,
+                    "variable": "ereefs/hydro/temp"
+                }
+            }
+        },
+        {
+            "id": "temp-18",
+            "title": { "text": "Temperature -18m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4-v2_daily": {
+                    "targetHeight": -17.75,
+                    "variable": "ereefs/hydro/temp"
+                }
+            }
+        },
+        {
+            "id": "temp-49",
+            "title": { "text": "Temperature -49m" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4-v2_daily": {
+                    "targetHeight": -49,
+                    "variable": "ereefs/hydro/temp"
+                }
+            }
+        },
+        {
+            "id": "wind",
+            "title": { "text": "Wind speed" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4-v2_daily": {
+                    "variable": "ereefs/hydro/wind",
+                    "arrowVariable": "ereefs/hydro/wind"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "yearly-videos",
+        "definitionId": "products__ncanimate__ereefs__gbr4_v2__temp-multi-depth"
+    }
+}

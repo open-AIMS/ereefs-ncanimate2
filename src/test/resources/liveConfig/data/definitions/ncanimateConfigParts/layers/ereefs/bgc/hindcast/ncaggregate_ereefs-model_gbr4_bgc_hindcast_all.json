@@ -1,0 +1,10 @@
+{
+    "_id": {
+        "id": "ncaggregate_ereefs-model_gbr4_bgc_hindcast_all",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "input": "products__ncaggregate__ereefs__GBR4_H2p0_B3p1_Cq3R_Dhnd__all-one",
+    "type": "NETCDF"
+}

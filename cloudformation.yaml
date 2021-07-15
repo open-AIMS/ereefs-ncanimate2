@@ -1,0 +1,114 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description:
+  AWS CloudFormation Template for the eReefs NcAnimate.
+
+Parameters:
+
+  Environment:
+    Type: String
+    Default: "testing"
+    Description: >
+      A unique name for the environment within the target account. This could be generic, such as "test" or "prod",
+      or it could be specific to a developer, such as "asmith".
+
+  EcrUserId:
+    Type: String
+    Default: "jenkins-ereefs-test-ncanimate" # This value is changed by the Jenkinsfile when pushing to production
+    Description: >
+      The id of the user that will push Docker images to the AWS ECR.
+
+Resources:
+
+  JobDefinitionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: ''
+            Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: 'sts:AssumeRole'
+      Policies:
+        - PolicyName:  s3Policy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetBucketAcl
+                  - s3:GetObject
+                  - s3:GetObjectAcl
+                  - s3:PutObject
+                  - s3:PutObjectAcl
+                  - s3:ListBucket
+                Resource:
+                  - Fn::ImportValue: !Sub "definitions-s3-${Environment}-PrivateBucket"
+                  - !Sub
+                    - "${BucketName}/*"
+                    - BucketName:
+                        Fn::ImportValue:
+                          Fn::Sub: "definitions-s3-${Environment}-PrivateBucket"
+                  - Fn::ImportValue: !Sub "definitions-s3-${Environment}-PublicBucket"
+                  - !Sub
+                    - "${BucketName}/*"
+                    - BucketName:
+                        Fn::ImportValue:
+                          Fn::Sub: "definitions-s3-${Environment}-PublicBucket"
+        - PolicyName:  ssmPolicy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - ssm:GetParameter
+                  - ssm:GetParametersByPath
+                Resource:
+                  - !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${Environment}/global/mongodb*'
+                  - !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${Environment}/ncAnimate/*'
+
+  JobDefinition:
+    Type: 'AWS::Batch::JobDefinition'
+    Properties:
+      Type: container
+      JobDefinitionName: !Sub 'ereefs-ncanimate-${Environment}'
+      ContainerProperties:
+        Image: !Sub '${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/ereefs-ncanimate-${Environment}'
+        JobRoleArn: !Ref JobDefinitionRole
+        Vcpus: 1
+        Memory: 7500
+        Environment:
+          -
+            Name: 'EXECUTION_ENVIRONMENT'
+            Value: !Ref Environment
+      RetryStrategy:
+        Attempts: 1
+
+  # Add a parameter to the ParameterStore linking this JobDefinition to ncAnimate tasks.
+  JobDefinitionParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Description: !Sub "Link Job Definition to ncAnimate for ${Environment}."
+      Name: !Sub "/${Environment}/global/task/batchConfig/jobDefinition/ncanimate"
+      Type: String
+      Value: !Ref JobDefinition
+
+  ElasticContainerRepository:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: !Sub 'ereefs-ncanimate-${Environment}'
+      RepositoryPolicyText:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AllowPush
+            Effect: Allow
+            Principal:
+              AWS:
+                - !Sub 'arn:aws:iam::${AWS::AccountId}:user/${EcrUserId}'
+            Action:
+              - 'ecr:PutImage'
+              - 'ecr:InitiateLayerUpload'
+              - 'ecr:UploadLayerPart'
+              - 'ecr:CompleteLayerUpload'

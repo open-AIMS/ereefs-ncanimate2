@@ -1,0 +1,17 @@
+{
+    "_id": {
+        "id": "products__ncaggregate__ereefs__GBR4_H2p0_B3p1_Cq3R_Dhnd__annual-annual__sed",
+        "datatype": "INPUT"
+    },
+    "lastModified": "2020-07-28T12:00:00.000+08:00",
+
+    "timeIncrement": {
+        "increment": 1,
+        "unit": "YEAR"
+    },
+    "licence": "Creative Commons Attribution 4.0 International (https://creativecommons.org/licenses/by/4.0/)",
+    "authors": [
+        "AIMS",
+        "eReefs CSIRO GBR4 Bio Geo Chemical Model ID GBR4_H2p0_B3p1_Cq3R_Dhnd"
+    ]
+}

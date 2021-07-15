@@ -1,0 +1,48 @@
+{
+    "_id": {
+        "id": "gbrf-panel",
+        "datatype": "PANEL"
+    },
+    "lastModified": "2020-10-01T11:15:00.000+08:00",
+
+    "borderWidth": 0,
+    "width": 1920,
+    "backgroundColour": "#F4FDFD",
+    "title": {
+        "position": {
+            "top": -130,
+            "right": 80
+        },
+        "fontSize": 50,
+        "fontColour": "#FFFFFF"
+    },
+    "texts": {
+        "frameDate": {
+            "text": "${ctx.frameDateFrom dd-MMM-yyyy_HH:mm}",
+            "fontColour": "#FFFFFF",
+            "fontSize": 30,
+            "position": {
+                "top": 180,
+                "right": 80
+            }
+        },
+        "attributions1": {
+            "fontSize": 14,
+            "text": "${layers.authors}, ${ctx.targetHeight %.1f}m",
+            "position": {
+                "bottom": 110,
+                "left": 80
+            },
+            "fontColour": "#000000CC"
+        },
+        "attributions2": {
+            "fontSize": 14,
+            "text": "Produced by AIMS, ${ctx.generationDate yyyy-MM-dd}",
+            "position": {
+                "bottom": 80,
+                "left": 80
+            },
+            "fontColour": "#000000CC"
+        }
+    }
+}

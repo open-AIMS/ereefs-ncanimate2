@@ -1,0 +1,77 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_bgc_baseline__pip_pip-sed_monthly",
+    "version": "2.0",
+    "lastModified": "2020-08-18T19:00:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2"
+    ],
+
+    "targetHeights": [-1.5],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom MMMM_yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly",
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly_sed",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "PIP",
+            "title": {
+                "text": "Particulate Inorganic Phosphorus ${ctx.targetHeight %.1f}m",
+                "fontSize": 18
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/pip"
+                }
+            }
+        },
+        {
+            "id": "PIP_sed",
+            "title": {
+                "text": "Particulate Inorganic Phos. sed.",
+                "fontSize": 17
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_monthly_sed": {
+                    "targetHeight": -0.0025,
+                    "variable": "ereefs/bgc/pip_sed"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr4_bgc_baseline__pip_pip-sed"
+    }
+}

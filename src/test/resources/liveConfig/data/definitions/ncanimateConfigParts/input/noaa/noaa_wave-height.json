@@ -1,0 +1,14 @@
+{
+    "_id": {
+        "id": "downloads__noaa__wave-height",
+        "datatype": "INPUT"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "timeIncrement": {
+        "increment": 3,
+        "unit": "HOUR"
+    },
+    "licence": "unknown",
+    "author": "NOAA"
+}

@@ -1,0 +1,15 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/finesed",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "FineSed",
+    "legend": {
+        "title": { "text": "Fine Sediment (kg m-3)" }
+    },
+    "colourPaletteName": "Blue50Red50Rainbow",
+    "scaleMin": 0,
+    "scaleMax": 0.0001
+}

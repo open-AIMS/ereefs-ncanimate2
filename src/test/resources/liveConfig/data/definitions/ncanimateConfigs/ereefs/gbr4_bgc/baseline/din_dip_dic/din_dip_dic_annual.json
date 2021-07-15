@@ -1,0 +1,89 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_bgc_baseline__din_dip_dic_annual",
+    "version": "2.0",
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2"
+    ],
+
+    "targetHeights": [-1.5],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_annual",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "DIN",
+            "title": {
+                "text": "Dissolved Inorganic Nitrogen ${ctx.targetHeight %.1f}m",
+                "fontSize": 22
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_annual": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/din"
+                }
+            }
+        },
+        {
+            "id": "DIP",
+            "title": {
+                "text": "Dissolved Inorganic Phosphorus ${ctx.targetHeight %.1f}m",
+                "fontSize": 20
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_annual": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/dip"
+                }
+            }
+        },
+        {
+            "id": "DIC",
+            "title": {
+                "text": "Dissolved Inorganic Carbon ${ctx.targetHeight %.1f}m",
+                "fontSize": 22
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_annual": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/bgc/dic"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr4_bgc_baseline__din_dip_dic"
+    }
+}

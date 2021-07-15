@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "townsville-4",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-03-13T16:30:00.000+08:00",
+
+    "label": "Townsville",
+    "scale": 4,
+    "bbox": {
+        "east": 147.651697734655,
+        "north": -17.8938146170322,
+        "south": -19.9141211443003,
+        "west": 146.293404175287
+    }
+}

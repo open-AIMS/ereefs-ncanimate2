@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "ncaggregate_ereefs-model_gbr1_2-0_historic_monthly_heatstress",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2020-12-01T15:00:00.000+08:00",
+
+    "input": "products__ncaggregate__ereefs__gbr1_2-0-historic_heat_stress-monthly-monthly",
+    "type": "NETCDF",
+    "arrowSize": 10
+}

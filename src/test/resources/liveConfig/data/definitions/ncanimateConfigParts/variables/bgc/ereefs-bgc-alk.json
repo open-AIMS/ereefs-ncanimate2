@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/alk",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "alk",
+    "legend": {
+        "title": { "text": "Total alkalinity (mmol m-3)" },
+        "steps": 8
+    },
+    "colourPaletteName": "Blue50Red50Rainbow-inv",
+    "scaleMin": 2140,
+    "scaleMax": 2280
+}

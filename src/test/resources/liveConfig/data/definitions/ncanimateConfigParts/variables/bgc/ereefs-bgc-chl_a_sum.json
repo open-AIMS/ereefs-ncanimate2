@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/chl_a_sum",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "Chl_a_sum",
+    "legend": {
+        "title": { "text": "Total Chlorophyll (mg Chl m-3)" },
+        "steps": 8
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 0,
+    "scaleMax": 1.4
+}

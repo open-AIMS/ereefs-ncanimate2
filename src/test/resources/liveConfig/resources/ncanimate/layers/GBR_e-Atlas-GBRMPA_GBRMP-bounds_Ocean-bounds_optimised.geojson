@@ -1,0 +1,31 @@
+{
+    "type":"FeatureCollection",
+    "totalFeatures":1,
+    "features":[
+        {
+            "type":"Feature",
+            "id":"GBR_e-Atlas-GBRMPA_GBRMP-bounds_Ocean-bounds.1",
+            "geometry":{
+                "type":"MultiLineString",
+                "coordinates":
+                    [[
+                        [142.53150750800003,-10.687569985999907],
+                        [145.0010529130001,-10.681888948999969],
+                        [145.00106191500004,-12.998524118999928],
+                        [146.00107091200005,-14.99851511799994],
+                        [147.00108974600008,-17.498499812999952],
+                        [152.91768228200013,-20.998489502999913],
+                        [154.00099892100008,-24.49840712499995],
+                        [152.04122666900003,-24.498486025999906]
+                    ]]
+            },
+            "geometry_name":"the_geom",
+            "properties":{
+                "LEFT_FID":-1,
+                "RIGHT_FID":0,
+                "NAME":"Great Barrier Reef Marine Park"
+            }
+        },
+    ],
+    "crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:EPSG::4283"}}
+}

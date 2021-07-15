@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ncaggregate/ereefs/hydro/mean_cur",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-05-11T12:00:00.000+08:00",
+
+    "variableId": "mean_cur",
+    "legend": {
+        "title": { "text": "Current magnitude (ms⁻¹)" },
+        "steps": 6
+    },
+    "colourPaletteName": "Blue50Red50Rainbow",
+    "scaleMin": 0,
+    "scaleMax": 0.5
+}

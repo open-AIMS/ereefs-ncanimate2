@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/hydro/dhw1",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-09-03T15:00:00.000+08:00",
+
+    "variableId": "dhw1",
+    "legend": {
+        "title": { "text": "°C week" },
+        "steps": 5
+    },
+    "colourPaletteName": "Blue25Red75Rainbow2",
+    "scaleMin": 20,
+    "scaleMax": 0
+}

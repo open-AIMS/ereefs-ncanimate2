@@ -1,0 +1,76 @@
+{
+    "_id": {
+        "id": "one-panel-canvas",
+        "datatype": "CANVAS"
+    },
+    "lastModified": "2020-07-28T12:00:00.000+08:00",
+
+    "backgroundColour": "#FFFFFF",
+    "padding": {
+        "top": 120,
+        "left": 16,
+        "bottom": 115,
+        "right": 16
+    },
+    "paddingBetweenPanels": 8,
+    "texts": {
+        "region": {
+            "fontSize": 25,
+            "bold": false,
+            "text": "${ctx.region.label}",
+            "position": {
+                "top": 28,
+                "left": 16
+            },
+            "italic": false
+        },
+        "frameDate": {
+            "text": "${ctx.frameDateFrom dd-MMM-yyyy_HH:mm} - ${ctx.frameDateTo HH:mm} AEST",
+            "fontSize": 25,
+            "bold": true,
+            "position": {
+                "top": 68
+            }
+        },
+        "framePeriod": {
+            "fontSize": 25,
+            "bold": false,
+            "text": "${ctx.framePeriod}",
+            "position": {
+                "top": 28,
+                "right": 16
+            },
+            "italic": false
+        },
+        "authors": {
+            "fontSize": 12,
+            "bold": false,
+            "text": "Data: ${layers.authors}",
+            "position": {
+                "bottom": 76,
+                "right": 16
+            },
+            "italic": false
+        },
+        "mapgen": {
+            "fontSize": 12,
+            "bold": false,
+            "text": "Map generation: AIMS ${ctx.generationDate dd-MMM-yyyy}",
+            "position": {
+                "bottom": 58,
+                "right": 16
+            },
+            "italic": false
+        },
+        "licence": {
+            "fontSize": 12,
+            "bold": false,
+            "text": "Licensing: ${layers.licences}",
+            "position": {
+                "bottom": 40,
+                "right": 16
+            },
+            "italic": false
+        }
+    }
+}

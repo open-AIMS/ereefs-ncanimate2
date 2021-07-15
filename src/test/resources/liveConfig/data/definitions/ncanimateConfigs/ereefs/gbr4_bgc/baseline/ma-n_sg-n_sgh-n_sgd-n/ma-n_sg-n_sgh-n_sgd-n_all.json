@@ -1,0 +1,90 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_bgc_baseline__ma-n_sg-n_sgh-n_sgd-n_all",
+    "version": "2.0",
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+    "enabled": false,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2"
+    ],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "hidden": true
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_all",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "MA_N",
+            "title": { "text": "Macroalgae N" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_all": {
+                    "variable": "ereefs/bgc/ma_n"
+                }
+            }
+        },
+        {
+            "id": "SG_N",
+            "title": { "text": "Seagrass Zostera N" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_all": {
+                    "variable": "ereefs/bgc/sg_n"
+                }
+            }
+        },
+        {
+            "id": "SGH_N",
+            "title": { "text": "Seagrass Halophila N" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_all": {
+                    "variable": "ereefs/bgc/sgh_n"
+                }
+            }
+        },
+        {
+            "id": "SGD_N",
+            "title": { "text": "Deep seagrass N" },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr4_bgc_baseline_all": {
+                    "variable": "ereefs/bgc/sgd_n"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "default-maps",
+        "definitionId": "products__ncanimate__ereefs__gbr4_bgc_baseline__ma-n_sg-n_sgh-n_sgd-n",
+
+        "metadata": {
+            "properties": {
+                "targetHeight": "N/A"
+            }
+        }
+    }
+}

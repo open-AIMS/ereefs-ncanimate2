@@ -1,0 +1,15 @@
+{
+    "_id": {
+        "id": "ereefs/hydro/wind",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-05-11T12:00:00.000+08:00",
+
+    "variableId": "wspeed_u:wspeed_v-group",
+    "legend": {
+        "title": { "text": "Magnitude of wind (ms⁻¹)" }
+    },
+    "colourPaletteName": "Blue50Red50Rainbow",
+    "scaleMin": 0,
+    "scaleMax": 24
+}

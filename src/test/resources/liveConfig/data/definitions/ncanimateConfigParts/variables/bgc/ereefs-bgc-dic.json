@@ -1,0 +1,19 @@
+{
+    "_id": {
+        "id": "ereefs/bgc/dic",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-08-18T19:00:00.000+08:00",
+
+    "variableId": "DIC",
+    "legend": {
+        "title": {
+            "text": "Dissolved Inorganic Carbon (mg C m-3)",
+            "fontSize": 12
+        },
+        "steps": 5
+    },
+    "colourPaletteName": "Blue50Red50Rainbow",
+    "scaleMin": 22000,
+    "scaleMax": 24000
+}

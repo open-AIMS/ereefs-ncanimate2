@@ -1,0 +1,54 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_v2__gbrf_temp_hourly",
+    "version": "2.0",
+    "lastModified": "2020-10-01T11:15:00.000+08:00",
+    "enabled": false,
+
+    "regions": [
+        "gbrf-queensland-1"
+    ],
+
+    "targetHeights": [-1.5],
+
+    "canvas": {
+        "id": "gbrf-canvas"
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "gbrf-panel",
+            "layers": [
+                "eAtlas_brightEarth",
+                "ereefs-model_gbr4-v2",
+                "reefs",
+                "coralSea",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-gbrf-legend"
+    },
+
+    "panels": [
+        {
+            "id": "temp",
+            "title": { "text": "Temperature" },
+            "layerOverwrites": {
+                "ereefs-model_gbr4-v2": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": {
+                        "id": "ereefs/hydro/temp",
+                        "colourPaletteName": "BlueRedRainbowTemp_20-34-degC_V2"
+                    }
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "gbrf-videos",
+        "definitionId": "products__ncanimate__ereefs__gbr4_v2__gbrf_temp",
+
+        "startDate": "2016-03-01T00:00:00.000+10:00",
+        "endDate": "2016-04-01T00:00:00.000+10:00"
+    }
+}

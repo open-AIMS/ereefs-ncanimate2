@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "gbrf-townsville-4",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-09-30T18:00:00.000+08:00",
+
+    "label": "Townsville",
+    "scale": 4,
+    "bbox": {
+        "east": 150.9733,
+        "north": -16.34,
+        "south": -20.15,
+        "west": 144.2
+    }
+}

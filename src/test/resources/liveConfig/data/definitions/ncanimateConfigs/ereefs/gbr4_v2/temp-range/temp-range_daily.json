@@ -1,0 +1,90 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr4_v2__temp-range_daily",
+    "version": "2.0",
+    "lastModified": "2020-08-20T12:00:00.000+08:00",
+    "enabled": true,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2",
+        "torres-strait-3",
+        "princess-charlotte-bay-3",
+        "lizard-island-3",
+        "cairns-3",
+        "townsville-3",
+        "whitsundays-3",
+        "broad-sound-3",
+        "fitzroy-3",
+        "hervey-bay-3",
+        "brisbane-3"
+    ],
+
+    "targetHeights": [-1.5],
+
+    "canvas": {
+        "id": "default-canvas",
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom dd-MMM-yyyy}"
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ncaggregate_stats_ereefs-model_gbr4-v2_daily",
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "rivers_label",
+                "cities"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "panels": [
+        {
+            "id": "temp_min",
+            "title": { "text": "Temperature minimum" },
+            "layerOverwrites": {
+                "ncaggregate_stats_ereefs-model_gbr4-v2_daily": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ncaggregate/ereefs/hydro/temp_min"
+                }
+            }
+        },
+        {
+            "id": "temp_max",
+            "title": { "text": "Temperature maximum" },
+            "layerOverwrites": {
+                "ncaggregate_stats_ereefs-model_gbr4-v2_daily": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ncaggregate/ereefs/hydro/temp_max"
+                }
+            }
+        },
+        {
+            "id": "temp_range",
+            "title": { "text": "Temperature range" },
+            "layerOverwrites": {
+                "ncaggregate_stats_ereefs-model_gbr4-v2_daily": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ncaggregate/ereefs/hydro/temp_range"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "yearly-videos",
+        "definitionId": "products__ncanimate__ereefs__gbr4_v2__temp-range"
+    }
+}

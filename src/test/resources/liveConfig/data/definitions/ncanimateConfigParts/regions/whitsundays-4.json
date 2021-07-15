@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "whitsundays-4",
+        "datatype": "REGION"
+    },
+    "lastModified": "2020-03-13T16:30:00.000+08:00",
+
+    "label": "Whitsundays",
+    "scale": 4,
+    "bbox": {
+        "east": 149.645300744043,
+        "north": -19.1244224311342,
+        "south": -21.1447289584024,
+        "west": 148.287007184675
+    }
+}
