@@ -31,7 +31,44 @@ public class NcAnimateMetadataIdFixer {
         JSONObjectIterable metadatas = metadataManager.selectAll(MetadataManager.MetadataType.NCANIMATE_PRODUCT);
 
         for (JSONObject metadata : metadatas) {
-            String origId = metadata.optString("_id");
+            String origId = metadata.optString("_id", null);
+            String fixedId = AbstractBean.safeIdValue(origId);
+
+            if (!origId.equals(fixedId)) {
+                boolean exists = metadataManager.exists(fixedId);
+                if (!exists) {
+                    // The metadata ID need fixing
+                    metadata.put("_id", fixedId);
+                    LOGGER.info(String.format("Updating metadata ID %s with new ID %s", origId, fixedId));
+                    if (!DRY_RUN) {
+                        metadataManager.save(metadata);
+                    }
+                } else {
+                    LOGGER.info(String.format("Metadata ID %s already exists", fixedId));
+                }
+                if (!DRY_RUN) {
+                    metadataManager.delete(origId);
+                }
+            }
+        }
+    }
+
+    public static void fixDownloadMetadataIds(DatabaseClient dbClient, CacheStrategy cacheStrategy) throws Exception {
+        // List all IDs
+        MetadataManager metadataManager = new MetadataManager(dbClient, cacheStrategy);
+
+        JSONObjectIterable metadatas = metadataManager.selectAll(MetadataManager.MetadataType.NETCDF);
+
+        for (JSONObject metadata : metadatas) {
+            String definitionId = metadata.optString("definitionId", null);
+
+            // Only process metadata with definition ID starting with "downloads__".
+            boolean isDownloadsMetadata = (definitionId != null && definitionId.startsWith("downloads__"));
+            if (!isDownloadsMetadata) {
+                continue;
+            }
+
+            String origId = metadata.optString("_id", null);
             String fixedId = AbstractBean.safeIdValue(origId);
 
             if (!origId.equals(fixedId)) {
