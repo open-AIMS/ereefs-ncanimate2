@@ -65,12 +65,12 @@ public class NcAnimate {
 
         if ("__FIX_NCANIMATE_PRODUCT_METADATA_ID__".equals(taskId)) {
             NcAnimateMetadataIdFixer.fixMetadataIds(
-                    new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.DISK);
+                    new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
             return;
         }
         if ("__FIX_DOWNLOAD_METADATA_ID__".equals(taskId)) {
             NcAnimateMetadataIdFixer.fixDownloadMetadataIds(
-                    new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.DISK);
+                    new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
             return;
         }
 
