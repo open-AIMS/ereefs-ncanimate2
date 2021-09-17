@@ -89,4 +89,34 @@ public class NcAnimateMetadataIdFixer {
             }
         }
     }
+
+    public static void fixDownloadDuplicatedMetadataIds(DatabaseClient dbClient, CacheStrategy cacheStrategy) throws Exception {
+        // List all IDs
+        MetadataManager metadataManager = new MetadataManager(dbClient, cacheStrategy);
+
+        JSONObjectIterable metadatas = metadataManager.selectAll(MetadataManager.MetadataType.NETCDF);
+
+        for (JSONObject metadata : metadatas) {
+            String definitionId = metadata.optString("definitionId", null);
+
+            // Only process metadata with definition ID starting with "downloads__".
+            boolean isDownloadsMetadata = (definitionId != null && definitionId.startsWith("downloads__"));
+            if (!isDownloadsMetadata) {
+                continue;
+            }
+
+            String origId = metadata.optString("_id", null);
+            String fixedId = AbstractBean.safeIdValue(origId);
+
+            if (!origId.equals(fixedId)) {
+                boolean exists = metadataManager.exists(fixedId);
+                if (exists) {
+                    LOGGER.info(String.format("Metadata ID %s already exists", fixedId));
+                    if (!DRY_RUN) {
+                        metadataManager.delete(origId);
+                    }
+                }
+            }
+        }
+    }
 }

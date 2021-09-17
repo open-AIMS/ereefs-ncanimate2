@@ -73,6 +73,11 @@ public class NcAnimate {
                     new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
             return;
         }
+        if ("__FIX_DOWNLOAD_METADATA_DUPLICATE_ID__".equals(taskId)) {
+            NcAnimateMetadataIdFixer.fixDownloadDuplicatedMetadataIds(
+                    new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
+            return;
+        }
 
         NcAnimate ncAnimate = new NcAnimate();
         ncAnimate.generateFromTaskId(taskId);
