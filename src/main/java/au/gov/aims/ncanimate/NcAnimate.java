@@ -74,8 +74,8 @@ public class NcAnimate {
                     new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
             return;
         }
-        if ("__FIX_DOWNLOAD_METADATA_DUPLICATE_ID__".equals(taskId)) {
-            NcAnimateMetadataIdFixer.fixDownloadDuplicatedMetadataIds(
+        if ("__FIX_METADATA_DUPLICATE_ID__".equals(taskId)) {
+            NcAnimateMetadataIdFixer.fixDuplicatedMetadataIds(
                     new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
             return;
         }
