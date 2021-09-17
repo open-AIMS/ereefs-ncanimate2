@@ -68,6 +68,7 @@ public class NcAnimate {
                     new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
             return;
         }
+        /* WARNING! This task will trigger a re-generation of all nc-aggregate tasks. */
         if ("__FIX_DOWNLOAD_METADATA_ID__".equals(taskId)) {
             NcAnimateMetadataIdFixer.fixDownloadMetadataIds(
                     new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
