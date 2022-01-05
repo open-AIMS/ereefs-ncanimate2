@@ -53,12 +53,6 @@
             <version>2.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.11.2</version>
-        </dependency>
-
         <!-- Used for JUnit tests - Not included in the war -->
         <dependency>
             <groupId>junit</groupId>
