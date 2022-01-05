@@ -103,7 +103,7 @@ public class NcAnimateMetadataIdFixer {
             if (!origId.equals(fixedId)) {
                 boolean exists = metadataManager.exists(fixedId);
                 if (exists) {
-                    LOGGER.info(String.format("Metadata ID %s already exists", fixedId));
+                    LOGGER.info(String.format("Deleting duplicated metadata ID: %s", origId));
                     if (!DRY_RUN) {
                         metadataManager.delete(origId);
                     }
