@@ -365,15 +365,16 @@ The `CANVAS` element defines the look and feel of each frame.
 
 ### Datatype LEGEND
 
-| Field                  | Type                               | Necessity                    | Description |
-| ---------------------- | ---------------------------------- | ---------------------------- | ----------- |
-| `title`                | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the text display to the right of the legend. |
-| `label`                | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the 4 scale labels display on the legend. |
-| `position`             | [`POSITION`](#POSITION)            | Optional                     | Position of the legend, relative to the panel it's in. |
-| `padding`              | [`PADDING`](#PADDING)              | Optional. Default: `{ "top": 5, "bottom": 5, "left": 5, "right": 5 }` | Space around the legend, filled with the background colour. |
-| `backgroundColour`     | String                             | Optional. Default: `#FFFFFF` | Colour used for the background of the legend. |
-| `colourBandWidth`      | Integer                            | Optional, default: `20`      | Width of the colour band displayed in the legend. |
-| `colourBandHeight`     | Integer                            | Optional, default: `300`     | Height of the colour band displayed in the legend. |
+| Field                   | Type                               | Necessity                    | Description |
+| ----------------------- | ---------------------------------- | ---------------------------- | ----------- |
+| `title`                 | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the text display to the right of the legend. |
+| `label`                 | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the 4 scale labels display on the legend. |
+| `position`              | [`POSITION`](#POSITION)            | Optional                     | Position of the legend, relative to the panel it's in. |
+| `padding`               | [`PADDING`](#PADDING)              | Optional. Default: `{ "top": 5, "bottom": 5, "left": 5, "right": 5 }` | Space around the legend, filled with the background colour. |
+| `backgroundColour`      | String                             | Optional. Default: `#FFFFFF` | Colour used for the background of the legend. |
+| `colourBandWidth`       | Integer                            | Optional, default: `20`      | Width of the colour band displayed in the legend. |
+| `colourBandHeight`      | Integer                            | Optional, default: `300`     | Height of the colour band displayed in the legend. |
+| `colourBandColourCount` | Integer                            | Optional, default: `250`     | Number of colours used to generate the layer and the legend. |
 
 
 > **Example**
@@ -388,6 +389,7 @@ The `CANVAS` element defines the look and feel of each frame.
 > 
 >     "colourBandWidth": 20,
 >     "colourBandHeight": 300,
+>     "colourBandColourCount": 250,
 >     "position": {
 >         "bottom": 5,
 >         "left": 5
