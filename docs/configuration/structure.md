@@ -315,6 +315,7 @@ The `CANVAS` element defines the look and feel of each frame.
 | `layers`               | Array of [`LAYER`](#Datatype-LAYER)            | Optional                     | Define which layer are use in the panel, and their order. |
 | `layerOverwrites`      | Object of <String, [`LAYER`](#Datatype-LAYER)> | Optional                     | Used to overwrite fields of [`LAYER`](#Datatype-LAYER) defined in the `layers` field. |
 | `width`                | Integer                                        | Mandatory                    | Width of the panel, in pixels. The height is calculated proportionally with the current region dimensions. |
+| `margin`               | [`PADDING`](#PADDING)                          | Optional. Default: `{ "top": 0, "bottom": 0, "left": 0, "right": 0 }` | The margin around the panel. |
 | `borderWidth`          | Integer                                        | Optional, Default: `2`       | Width of the panel border, in pixels. |
 | `borderColour`         | String                                         | Optional, Default: `#000000` | Colour used for the panel's border. |
 | `backgroundColour`     | String                                         | Optional, Default: `#FFFFFF` | Colour used for the panel's background. |
