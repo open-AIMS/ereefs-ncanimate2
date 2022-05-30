@@ -370,6 +370,10 @@ The `CANVAS` element defines the look and feel of each frame.
 | ----------------------- | ---------------------------------- | ---------------------------- | ----------- |
 | `title`                 | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the text display to the right of the legend. |
 | `label`                 | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the 4 scale labels display on the legend. |
+| `step`                  | Integer                            | Optional                     | The number of labels to display in the legend. |
+| `labelPrecision`        | Integer                            | Optional                     | The number of digits to display for the numbers in the legend. |
+| `labelMultiplier`       | Float                              | Optional                     | Each values in the legend are multiplied by this number. Can be used to convert units, or generate prettier legend with small values or large values. Remember to also alter the legend title to describe the new unit. |
+| `labelOffset`           | Float                              | Optional                     | Each values in the legend are offset by this number. Can be used to convert units. Note that `labelMultiplier` is applied before `labelOffset`. |
 | `position`              | [`POSITION`](#POSITION)            | Optional                     | Position of the legend, relative to the panel it's in. |
 | `padding`               | [`PADDING`](#PADDING)              | Optional. Default: `{ "top": 5, "bottom": 5, "left": 5, "right": 5 }` | Space around the legend, filled with the background colour. |
 | `backgroundColour`      | String                             | Optional. Default: `#FFFFFF` | Colour used for the background of the legend. |
