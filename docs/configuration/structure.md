@@ -380,7 +380,10 @@ The `CANVAS` element defines the look and feel of each frame.
 | `colourBandWidth`       | Integer                            | Optional, default: `20`      | Width of the colour band displayed in the legend. |
 | `colourBandHeight`      | Integer                            | Optional, default: `300`     | Height of the colour band displayed in the legend. |
 | `colourBandColourCount` | Integer                            | Optional, default: `250`     | Number of colours used to generate the layer and the legend. |
-
+| `majorTickMarkLength`   | Integer                            | Optional, default: `6`       | Length of the big tick marks in the legend. The ones next to numbers. |
+| `minorTickMarkLength`   | Integer                            | Optional, default: `3`       | Length of the small tick marks in the legend. The ones between numbers. |
+| `hideLowerLabel`        | Boolean                            | Optional, default: `false`   | Prevent rendering the smaller number in the legend, and its tick mark. |
+| `hideHigherLabel`       | Boolean                            | Optional, default: `false`   | Prevent rendering the larger number in the legend, and its tick mark. |
 
 > **Example**
 > 
@@ -685,7 +688,7 @@ NcAnimate can create a layer from a CSV file. The file must define a series of p
 >         "increment": 1,
 >         "unit": "HOUR"
 >     },
->     "licence": "CC-BY 4.0 Aust",
+>     "licence": "CC-BY 4.0",
 >     "authors": [
 >         "AIMS",
 >         "eReefs CSIRO GBR4 Hydrodynamic Model v2.0"
