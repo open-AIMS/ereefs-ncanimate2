@@ -50,7 +50,7 @@ The examples found in this section are using this simplified NcAnimate configura
                             "increment": 1,
                             "unit": "HOUR"
                         },
-                        "licence": "CC-BY 4.0 Aust",
+                        "licence": "CC-BY 4.0",
                         "author": "eReefs CSIRO GBR4 Hydrodynamic Model v2.0"
                     },
                     "type": "NETCDF",
@@ -242,7 +242,7 @@ The array of layers can be accessed using the special variable `layers`.
 >
 > parse as
 >
-> `CC-BY 4.0 Aust`
+> `CC-BY 4.0`
 
 
 ## Special variable `layerCtx`

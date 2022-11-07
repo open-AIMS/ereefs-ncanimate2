@@ -315,9 +315,10 @@ The `CANVAS` element defines the look and feel of each frame.
 | `layers`               | Array of [`LAYER`](#Datatype-LAYER)            | Optional                     | Define which layer are use in the panel, and their order. |
 | `layerOverwrites`      | Object of <String, [`LAYER`](#Datatype-LAYER)> | Optional                     | Used to overwrite fields of [`LAYER`](#Datatype-LAYER) defined in the `layers` field. |
 | `width`                | Integer                                        | Mandatory                    | Width of the panel, in pixels. The height is calculated proportionally with the current region dimensions. |
-| `borderWidth`          | Integer                                        | Optional, Default: `2`       | Width of the panel border, in pixels. |
-| `borderColour`         | String                                         | Optional, Default: `#000000` | Colour used for the panel's border. |
-| `backgroundColour`     | String                                         | Optional, Default: `#FFFFFF` | Colour used for the panel's background. |
+| `margin`               | [`PADDING`](#PADDING)                          | Optional. Default: `{ "top": 0, "bottom": 0, "left": 0, "right": 0 }` | The margin around the panel. |
+| `borderWidth`          | Integer                                        | Optional. Default: `2`       | Width of the panel border, in pixels. |
+| `borderColour`         | String                                         | Optional. Default: `#000000` | Colour used for the panel's border. |
+| `backgroundColour`     | String                                         | Optional. Default: `#FFFFFF` | Colour used for the panel's background. |
 | `mapScale`             | Integer                                        | Deprecated                   | Was used to specify the scale for the layers' SLD style, for the layer. If we still want to use this field, it should be moved to [`REGION`](#Datatype-REGION). |
 | `description`          | String                                         | Unused                       | Can be used to add comments, helpful for the maintenance of the configuration. |
 | `texts`                | Object of <String, [`TEXT`](#TEXT)>            | Optional                     | Collection of text that can be rendered anywhere on the frame, with position relative to the panel. |
@@ -365,16 +366,26 @@ The `CANVAS` element defines the look and feel of each frame.
 
 ### Datatype LEGEND
 
-| Field                  | Type                               | Necessity                    | Description |
-| ---------------------- | ---------------------------------- | ---------------------------- | ----------- |
-| `title`                | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the text display to the right of the legend. |
-| `label`                | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the 4 scale labels display on the legend. |
-| `position`             | [`POSITION`](#POSITION)            | Optional                     | Position of the legend, relative to the panel it's in. |
-| `padding`              | [`PADDING`](#PADDING)              | Optional. Default: `{ "top": 5, "bottom": 5, "left": 5, "right": 5 }` | Space around the legend, filled with the background colour. |
-| `backgroundColour`     | String                             | Optional. Default: `#FFFFFF` | Colour used for the background of the legend. |
-| `colourBandWidth`      | Integer                            | Optional, default: `20`      | Width of the colour band displayed in the legend. |
-| `colourBandHeight`     | Integer                            | Optional, default: `300`     | Height of the colour band displayed in the legend. |
-
+| Field                   | Type                               | Necessity                    | Description |
+| --------------------------- | ---------------------------------- | ---------------------------- | ----------- |
+| `title`                     | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the text display to the right of the legend. |
+| `label`                     | [`TEXT`](#TEXT)                    | Optional                     | Configuration of the scale labels display on the legend.<br>**NOTE**: `position` is ignored with `label`. |
+| `step`                      | Integer                            | Optional                     | The number of labels to display in the legend. |
+| `labelPrecision`            | Integer                            | Optional                     | The number of digits to display for the numbers in the legend. |
+| `labelMultiplier`           | Float                              | Optional                     | Each values in the legend are multiplied by this number. Can be used to convert units, or generate prettier legend with small values or large values. Remember to also alter the legend title to describe the new unit. |
+| `labelOffset`               | Float                              | Optional                     | Each values in the legend are offset by this number. Can be used to convert units. Note that `labelMultiplier` is applied before `labelOffset`. |
+| `position`                  | [`POSITION`](#POSITION)            | Optional                     | Position of the legend, relative to the panel it's in. |
+| `padding`                   | [`PADDING`](#PADDING)              | Optional. Default: `{ "top": 5, "bottom": 5, "left": 5, "right": 5 }` | Space around the legend, filled with the background colour. |
+| `backgroundColour`          | String                             | Optional. Default: `#FFFFFF` | Colour used for the background of the legend. |
+| `colourBandWidth`           | Integer                            | Optional. Default: `20`      | Width of the colour band displayed in the legend. |
+| `colourBandHeight`          | Integer                            | Optional. Default: `300`     | Height of the colour band displayed in the legend. |
+| `colourBandColourCount`     | Integer                            | Optional. Default: `250`     | Number of colours used to generate the layer and the legend. |
+| `majorTickMarkLength`       | Integer                            | Optional. Default: `6`       | Length of the big tick marks in the legend. The ones next to numbers. |
+| `minorTickMarkLength`       | Integer                            | Optional. Default: `3`       | Length of the small tick marks in the legend. The ones between numbers.<br>Disabled with colourSchemeType thresholds and coloured arrows. It has no effect when the variable `colourSchemeType` is set to `thresholds` or `arrow_thresholds`. |
+| `hideLowerLabel`            | Boolean                            | Optional. Default: `false`   | Prevent rendering the smaller number in the legend, and its tick mark. It has no effect when the variable `colourSchemeType` is set to `thresholds` or `arrow_thresholds`. |
+| `hideHigherLabel`           | Boolean                            | Optional. Default: `false`   | Prevent rendering the larger number in the legend, and its tick mark. It has no effect when the variable `colourSchemeType` is set to `thresholds` or `arrow_thresholds`. |
+| `extraAmountOutOfRangeLow`  | Float                              | Optional. Default: `0.1`     | Ratio of the colour band used to represent the colour for the lowest value. Act as padding in the colour band. It has no effect when the variable `colourSchemeType` is set to `thresholds` or `arrow_thresholds`. |
+| `extraAmountOutOfRangeHigh` | Float                              | Optional. Default: `0.1`     | Ratio of the colour band used to represent the colour for the highest value. Act as padding in the colour band. It has no effect when the variable `colourSchemeType` is set to `thresholds` or `arrow_thresholds`. |
 
 > **Example**
 > 
@@ -388,6 +399,7 @@ The `CANVAS` element defines the look and feel of each frame.
 > 
 >     "colourBandWidth": 20,
 >     "colourBandHeight": 300,
+>     "colourBandColourCount": 250,
 >     "position": {
 >         "bottom": 5,
 >         "left": 5
@@ -678,7 +690,7 @@ NcAnimate can create a layer from a CSV file. The file must define a series of p
 >         "increment": 1,
 >         "unit": "HOUR"
 >     },
->     "licence": "CC-BY 4.0 Aust",
+>     "licence": "CC-BY 4.0",
 >     "authors": [
 >         "AIMS",
 >         "eReefs CSIRO GBR4 Hydrodynamic Model v2.0"
@@ -697,9 +709,12 @@ NcAnimate can create a layer from a CSV file. The file must define a series of p
 | `scaleMax`             | Float                                               | Optional. Default: `+50.0`     | Maximum value in the scale. |
 | `northAngle`           | Float                                               | Optional. Default: `0`         | Angle pointing north, in degree. Used with non-standard `dir` variable. See bellow for more information. |
 | `directionTurns`       | Float                                               | Optional. Default: `360`       | Number of unit in a circle. Used with non-standard `dir` variable. See bellow for more information. |
-| `logarithmic`          | Boolean                                             | Optional. Default: `false`     | EXPERIMENTAL FEATURE! Use logarithmic scale. |
+| `logarithmic`          | Boolean                                             | Optional. Default: `false`     | Use logarithmic scale. |
 | `legend`               | [`LEGEND`](#Datatype-LEGEND)                        | Optional. Default: No legend   | Define where and how the legend is rendered. |
-
+| `arrowColour`          | String                                              | Optional. Default: `#000000`   | Colour of the arrow, used with `arrowVariable`. |
+| `colourSchemeType`     | String                                              | Optional. Default: `scale`     | Type of legend. Accepted values are: `scale`, `thresholds` and `arrow_thresholds`. |
+| `arrowThresholds`      | Array of String                                     | Optional                       | List of colour, used with `arrowVariable`, when `colourSchemeType` is set to `arrow_thresholds`. See bellow for more information. |
+| `thresholds`           | Array of Float                                      | Optional                       | Define the thresholds to use in the legend, when `colourSchemeType` is set to `thresholds`. See bellow for more information. |
 
 **Field `colourPaletteName`**
 
@@ -802,6 +817,75 @@ If a variable define a direction, some extra information can be provided to desc
 >     "scaleMin": 0
 > }
 > ```
+
+**Field `arrowThresholds`**
+
+List of thresholds and colours, used to define an arrowVariable rendered with colours.
+
+Each threshold must be defined between 2 colours.
+Therefore, the content of this field alternate between colour and threshold value:
+> [HEXADECIMAL COLOUR]  
+> [MAGNITUDE THRESHOLD VALUE]  
+> [HEXADECIMAL COLOUR]  
+> [MAGNITUDE THRESHOLD VALUE]  
+> [HEXADECIMAL COLOUR]  
+> ...
+
+> **arrowThresholds example**
+> 
+> ```
+> {
+>     "id": "wind",
+>     "layerOverwrites": {
+>         "ereefs-model_gbr4-v2": {
+>             "variable": {
+>                 "id": "ereefs/gbr4_v2/wind"
+>             },
+>             "arrowVariable": {
+>                 "id": "ereefs/gbr4_v2/current",
+>                 "arrowThresholds": [
+>                     "#00000066",
+>                     "0.4",
+>                     "#00990066",
+>                     "0.45",
+>                     "#99990066",
+>                     "0.5",
+>                     "#99000066"
+>                 ]
+>             }
+>         }
+>     }
+> }
+> ```
+
+In the above example:
+- Black arrow: Magnitude = `[-infinity, 0.4]`
+- Green arrow: Magnitude = `]0.4, 0.45]`
+- Yellow arrow: Magnitude = `]0.45, 0.5]`
+- Red arrow: Magnitude = `]0.5, infinity]`
+
+**Fields `colourSchemeType` and `thresholds`**
+
+To define thresholds in the legend, set the `colourSchemeType` to `thresholds` and define a list of `thresholds`.
+
+> **thresholds example**
+> 
+> ```
+> {
+>     "_id": {
+>         "id": "ereefs/gbr1_2-0-river",
+>         "datatype": "VARIABLE"
+>     },
+>     "variableId": "bur",
+>     "legend": {
+>         "steps": 6,
+>         "colourBandColourCount": 5,
+>     },
+>     "colourSchemeType": "thresholds",
+>     "thresholds": [0.0015, 0.02, 0.1, 0.3]
+> }
+> ```
+
 
 
 ### Datatype RENDER
