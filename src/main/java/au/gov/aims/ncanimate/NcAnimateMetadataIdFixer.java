@@ -123,22 +123,24 @@ public class NcAnimateMetadataIdFixer {
             if (origId != null) {
                 String fixedId = AbstractBean.safeIdValue(origId);
                 if (!origId.equals(fixedId)) {
-                    if (origId.startsWith("downloads__ereefs__")) {
-                        LOGGER.info(String.format("Lock down old metadata ID: %s", origId));
-                        metadata.put("lastModified", "3000-01-01T00:00:00.000Z");
-                        if (!DRY_RUN) {
-                            metadataManager.save(metadata);
-                        }
-                    } else {
-                        LOGGER.info(String.format("NOT A EREEFS DOWNLOAD - SKIPPING: %s", origId));
-                    }
-
                     boolean exists = metadataManager.exists(fixedId);
                     if (exists) {
-                        LOGGER.info(String.format("Deleting NEW duplicated metadata ID: %s", fixedId));
-                        if (!DRY_RUN) {
-                            // Delete
-                            metadataManager.delete(fixedId);
+                        LOGGER.info(String.format("Duplicate metadata ID found: %s %s", origId, fixedId));
+
+                        if (origId.startsWith("downloads__ereefs__")) {
+                            LOGGER.info(String.format("Lock down old metadata ID: %s", origId));
+                            metadata.put("lastModified", "3000-01-01T00:00:00.000Z");
+                            if (!DRY_RUN) {
+                                metadataManager.save(metadata);
+                            }
+
+                            LOGGER.info(String.format("Deleting NEW duplicated metadata ID: %s", fixedId));
+                            if (!DRY_RUN) {
+                                // Delete
+                                metadataManager.delete(fixedId);
+                            }
+                        } else {
+                            LOGGER.info(String.format("NOT A EREEFS DOWNLOAD - SKIPPING: %s", origId));
                         }
                     }
                 }
