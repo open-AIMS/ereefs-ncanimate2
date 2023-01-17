@@ -25,7 +25,7 @@ import java.util.Map;
 public class NcAnimateMetadataIdFixer {
     private static final Logger LOGGER = Logger.getLogger(NcAnimateMetadataIdFixer.class);
 
-    private static final boolean DRY_RUN = true;
+    private static final boolean DRY_RUN = false;
 
     public static void fixMetadataIds(DatabaseClient dbClient, CacheStrategy cacheStrategy) throws Exception {
         // List all IDs
@@ -122,7 +122,7 @@ public class NcAnimateMetadataIdFixer {
         JSONObjectIterable metadatas = metadataManager.selectAll(MetadataManager.MetadataType.NETCDF);
 
         Map<String, Integer> duplicatedIdCountMap = new HashMap<>();
-        Map<String, Integer> fixedMetadataCountMap = new HashMap<>();
+        Map<String, Integer> lockedMetadataCountMap = new HashMap<>();
         Map<String, Integer> skippedMetadataCountMap = new HashMap<>();
 
         for (JSONObject metadata : metadatas) {
@@ -133,7 +133,7 @@ public class NcAnimateMetadataIdFixer {
                 if (!origId.equals(fixedId)) {
                     if (origId.startsWith("downloads__ereefs__")) {
                         LOGGER.info(String.format("Lock down old metadata ID: %s", origId));
-                        incrementCount(fixedMetadataCountMap, idPrefix);
+                        incrementCount(lockedMetadataCountMap, idPrefix);
                         metadata.put("lastModified", "3000-01-01T00:00:00.000Z");
                         if (!DRY_RUN) {
                             metadataManager.save(metadata);
@@ -159,11 +159,11 @@ public class NcAnimateMetadataIdFixer {
         }
 
         LOGGER.info("--- Summary ---");
-        LOGGER.info("Duplicate metadata ID found");
+        LOGGER.info("Duplicate metadata ID fixed");
         LOGGER.info(printCountMap(duplicatedIdCountMap));
 
-        LOGGER.info("Fixed metadata");
-        LOGGER.info(printCountMap(fixedMetadataCountMap));
+        LOGGER.info("Locked metadata");
+        LOGGER.info(printCountMap(lockedMetadataCountMap));
 
         LOGGER.info("Skipped metadata (not eReefs download)");
         LOGGER.info(printCountMap(skippedMetadataCountMap));
