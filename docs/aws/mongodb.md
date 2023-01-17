@@ -13,7 +13,7 @@ and how to request the database with basic queries.
 
     The `-o ServerAliveInterval=60` argument is used to keep the SSH connection active.
 
-    If you are using a SSH, you can provide it to the SSH command using the `-i` argument:
+    If you are using a SSH key, you can provide it to the SSH command using the `-i` argument:
 
     ```$ ssh -i ssh-key.pem -o ServerAliveInterval=60 server-user@XXX.XXX.XXX.XXX```
 
