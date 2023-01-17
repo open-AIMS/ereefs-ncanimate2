@@ -146,5 +146,7 @@ public class NcAnimateMetadataIdFixer {
                 }
             }
         }
+
+        LOGGER.info("Done");
     }
 }
