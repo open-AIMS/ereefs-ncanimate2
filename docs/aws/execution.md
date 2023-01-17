@@ -57,18 +57,26 @@ you will need to launch a Batch job.
 
 1. Log on AWS: https://console.aws.amazon.com/console/home
 2. Navigate to *AWS Batch > Job definitions*
-3. Select *ereefs-ncanimate-test* or *ereefs-ncanimate-prod*
-4. Click the radio button to the left of the latest revision.
-    **NOTE:** Clicking the revision link WON'T WORK! You need to click the *Radio button*.
-5. Click the *[Actions]* button, then select *Submit job*
-6. Fill the form:
-    1. Job run-time
-        1. Job name: [NcAnimate_queensland-1_2020-04-07_10h40]
-        3. Job queue: [ereefs-management_test]
-    2. Environment variables
-        1. Leave the *EXECUTION_ENVIRONMENT* variable as-is
-        2. Click: *Add environment variable*
-        3. Key: `TASK_ID`,
-            Value: `NcAnimateTask_b5294561-e6a4-4ff1-89da-9bd2235bd8ef`
-            (use the ID of the task that needs to be run)
-    3. Click *[Submit job]* button
+3. Click *ereefs-ncanimate-test* or *ereefs-ncanimate-prod*
+4. Click the *[Submit new job]* button on top right
+5. Fill the form:
+    1. *Job configuration*
+        1. General configuration
+            1. Name - required: [NcAnimate_queensland-1_2020-04-07_10h40]
+            2. Job definition - required: [ereefs-ncanimate-test]
+            3. Job queue - required: [ereefs-management_test]
+        2. [Next page]
+
+    2. *Overrides - Optional*
+        1. Job overrides (Leave as-is)
+        2. Container overrides
+            1. Environment variables
+                1. Leave the *EXECUTION_ENVIRONMENT* variable as-is
+                2. Click: *Add environment variable*
+                3. Key: `TASK_ID`,
+                    Value: `NcAnimateTask_b5294561-e6a4-4ff1-89da-9bd2235bd8ef`
+                    (use the ID of the task that needs to be run)
+        3. [Next page]
+
+    3. *Job review*
+        1. Click *[Create job]* button

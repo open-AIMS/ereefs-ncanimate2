@@ -79,6 +79,18 @@ public class NcAnimate {
                     new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
             return;
         }
+        // 2023-01-17: CSIRO changed all the last modified dates of the files on NCI, but didn't change any data.
+        //     That triggered a re-download of all the old files, creating duplicate of all the old metadata:
+        //     - The metadata for the download files which have a "." in them now have a duplicate entry with a "_".
+        //     To fix this issue permanently, we create this task ID which do the following:
+        //     1. Remove new duplicate ID with a "_" in them.
+        //     2. Change the last modified date of the old metadata to some date far in the future (3000-01-01)
+        //         to prevent this issue from re-occurring.
+        if ("__LOCK_OLD_EREEFS_METADATA_IDS__".equals(taskId)) {
+            NcAnimateMetadataIdFixer.lockOldMetadataIds(
+                    new DatabaseClient(NcAnimateUtils.APP_NAME), CacheStrategy.NONE);
+            return;
+        }
 
         NcAnimate ncAnimate = new NcAnimate();
         ncAnimate.generateFromTaskId(taskId);

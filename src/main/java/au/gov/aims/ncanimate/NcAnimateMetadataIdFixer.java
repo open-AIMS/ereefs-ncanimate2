@@ -22,7 +22,7 @@ import org.json.JSONObject;
 public class NcAnimateMetadataIdFixer {
     private static final Logger LOGGER = Logger.getLogger(NcAnimateMetadataIdFixer.class);
 
-    private static final boolean DRY_RUN = false;
+    private static final boolean DRY_RUN = true;
 
     public static void fixMetadataIds(DatabaseClient dbClient, CacheStrategy cacheStrategy) throws Exception {
         // List all IDs
@@ -110,5 +110,43 @@ public class NcAnimateMetadataIdFixer {
                 }
             }
         }
+    }
+
+    public static void lockOldMetadataIds(DatabaseClient dbClient, CacheStrategy cacheStrategy) throws Exception {
+        // List all IDs
+        MetadataManager metadataManager = new MetadataManager(dbClient, cacheStrategy);
+
+        JSONObjectIterable metadatas = metadataManager.selectAll(MetadataManager.MetadataType.NETCDF);
+
+        for (JSONObject metadata : metadatas) {
+            String origId = metadata.optString("_id", null);
+            if (origId != null) {
+                String fixedId = AbstractBean.safeIdValue(origId);
+                if (!origId.equals(fixedId)) {
+                    boolean exists = metadataManager.exists(fixedId);
+                    if (exists) {
+                        LOGGER.info(String.format("Duplicate metadata ID found: %s %s", origId, fixedId));
+
+                        if (origId.startsWith("downloads__ereefs__")) {
+                            LOGGER.info(String.format("Lock down old metadata ID: %s", origId));
+                            metadata.put("lastModified", "3000-01-01T00:00:00.000Z");
+                            if (!DRY_RUN) {
+                                metadataManager.save(metadata);
+                            }
+
+                            LOGGER.info(String.format("Deleting NEW duplicated metadata ID: %s", fixedId));
+                            if (!DRY_RUN) {
+                                // Delete
+                                metadataManager.delete(fixedId);
+                            }
+                        } else {
+                            LOGGER.info(String.format("NOT A EREEFS DOWNLOAD - SKIPPING: %s", origId));
+                        }
+                    }
+                }
+            }
+        }
+
+        LOGGER.info("Done");
     }
 }
