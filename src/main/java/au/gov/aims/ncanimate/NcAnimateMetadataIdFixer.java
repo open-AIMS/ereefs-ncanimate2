@@ -136,7 +136,7 @@ public class NcAnimateMetadataIdFixer {
                         incrementCount(lockedMetadataCountMap, idPrefix);
                         metadata.put("lastModified", "3000-01-01T00:00:00.000Z");
                         if (!DRY_RUN) {
-                            metadataManager.save(metadata);
+                            metadataManager.save(metadata, false);
                         }
 
                         boolean exists = metadataManager.exists(fixedId);
