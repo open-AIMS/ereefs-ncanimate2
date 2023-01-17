@@ -12,6 +12,9 @@ import au.gov.aims.ereefs.database.table.JSONObjectIterable;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * This class was intended to be used once only, to fix
  * erroneous metadata IDs previously saved in the Database.
@@ -118,14 +121,20 @@ public class NcAnimateMetadataIdFixer {
 
         JSONObjectIterable metadatas = metadataManager.selectAll(MetadataManager.MetadataType.NETCDF);
 
+        Map<String, Integer> duplicatedIdCountMap = new HashMap<>();
+        Map<String, Integer> fixedMetadataCountMap = new HashMap<>();
+        Map<String, Integer> skippedMetadataCountMap = new HashMap<>();
+
         for (JSONObject metadata : metadatas) {
             String origId = metadata.optString("_id", null);
+            String idPrefix = origId.split("/")[0];
             if (origId != null) {
                 String fixedId = AbstractBean.safeIdValue(origId);
                 if (!origId.equals(fixedId)) {
                     boolean exists = metadataManager.exists(fixedId);
                     if (exists) {
                         LOGGER.info(String.format("Duplicate metadata ID found: %s %s", origId, fixedId));
+                        incrementCount(duplicatedIdCountMap, idPrefix);
 
                         if (origId.startsWith("downloads__ereefs__")) {
                             LOGGER.info(String.format("Lock down old metadata ID: %s", origId));
@@ -139,14 +148,42 @@ public class NcAnimateMetadataIdFixer {
                                 // Delete
                                 metadataManager.delete(fixedId);
                             }
+                            incrementCount(fixedMetadataCountMap, idPrefix);
                         } else {
                             LOGGER.info(String.format("NOT A EREEFS DOWNLOAD - SKIPPING: %s", origId));
+                            incrementCount(skippedMetadataCountMap, idPrefix);
                         }
                     }
                 }
             }
         }
 
-        LOGGER.info("Done");
+        LOGGER.info("--- Summary ---");
+        LOGGER.info("Duplicate metadata ID found");
+        LOGGER.info(printCountMap(duplicatedIdCountMap));
+
+        LOGGER.info("Fixed metadata");
+        LOGGER.info(printCountMap(fixedMetadataCountMap));
+
+        LOGGER.info("Skipped metadata (not eReefs download)");
+        LOGGER.info(printCountMap(skippedMetadataCountMap));
+    }
+
+    private static void incrementCount(Map<String, Integer> map, String key) {
+        Integer count = map.get(key);
+        if (count == null) {
+            count = 0;
+        }
+        count++;
+        map.put(key, count);
+    }
+    private static String printCountMap(Map<String, Integer> map) {
+        StringBuilder sb = new StringBuilder();
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            sb.append("- ").append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        }
+
+        return sb.toString();
     }
 }
