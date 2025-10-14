@@ -1,8 +1,8 @@
 {
     "_id": "products__ncanimate__ereefs__gbr4_v2__temp-wind-salt-current_annual",
     "version": "2.0",
-    "lastModified": "2020-04-16T11:30:00.000+08:00",
-    "enabled": true,
+    "lastModified": "2023-01-24T10:05:00.000+08:00",
+    "enabled": false,
 
     "regions": [
         "queensland-1",
@@ -57,7 +57,7 @@
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr4-v2_annual": {
                     "targetHeight": "${ctx.targetHeight}",
-                    "variable": "ereefs/hydro/temp"
+                    "variable": "ereefs/hydro/temp-annual"
                 }
             }
         },
@@ -66,8 +66,8 @@
             "title": { "text": "Wind speed" },
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr4-v2_annual": {
-                    "variable": "ereefs/hydro/wind",
-                    "arrowVariable": "ereefs/hydro/wind"
+                    "variable": "ereefs/hydro/wind-annual",
+                    "arrowVariable": "ereefs/hydro/wind-annual"
                 }
             }
         },
@@ -87,8 +87,8 @@
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr4-v2_annual": {
                     "targetHeight": "${ctx.targetHeight}",
-                    "variable": "ereefs/hydro/current",
-                    "arrowVariable": "ereefs/hydro/current"
+                    "variable": "ereefs/hydro/current-annual",
+                    "arrowVariable": "ereefs/hydro/current-annual"
                 }
             }
         }

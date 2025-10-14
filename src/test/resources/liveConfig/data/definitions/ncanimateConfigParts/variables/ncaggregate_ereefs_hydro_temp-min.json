@@ -10,6 +10,7 @@
         "title": { "text": "Temperature minimum (°C)" },
         "steps": 8
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "BlueRedRainbowTemp_20-34-degC",
     "scaleMin": 20,
     "scaleMax": 34

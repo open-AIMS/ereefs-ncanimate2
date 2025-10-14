@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/mar",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "mar",
+    "legend": {
+        "title": { "text": "Mary" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 122.6998,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.0081,
+        0.0244,
+        0.0815,
+        0.2445
+    ]
+}

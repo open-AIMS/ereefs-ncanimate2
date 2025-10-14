@@ -3,13 +3,14 @@
         "id": "ereefs/hydro/current",
         "datatype": "VARIABLE"
     },
-    "lastModified": "2020-05-11T12:00:00.000+08:00",
+    "lastModified": "2023-01-24T10:05:00.000+08:00",
 
     "variableId": "u:v-group",
     "legend": {
         "title": { "text": "Current (ms⁻¹)" }
     },
-    "colourPaletteName": "BlueRedRainbowCurrent_0_1-1-m-s",
+    "colourSchemeType": "scale",
+    "colourPaletteName": "Blue38Red62RainbowCurrent",
     "scaleMin": 0,
     "scaleMax": 1.2
 }

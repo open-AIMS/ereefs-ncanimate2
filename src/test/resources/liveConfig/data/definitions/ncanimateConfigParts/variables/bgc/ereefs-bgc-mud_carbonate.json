@@ -9,6 +9,7 @@
     "legend": {
         "title": { "text": "Mud carbonate (kg m-3)" }
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue25Red75Rainbow2",
     "scaleMin": 0,
     "scaleMax": 0.006

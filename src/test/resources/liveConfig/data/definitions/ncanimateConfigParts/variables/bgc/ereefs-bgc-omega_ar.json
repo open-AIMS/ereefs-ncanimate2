@@ -10,6 +10,7 @@
         "title": { "text": "Aragonite saturation state" },
         "steps": 5
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue50Red50Rainbow-inv",
     "scaleMin": 2,
     "scaleMax": 4

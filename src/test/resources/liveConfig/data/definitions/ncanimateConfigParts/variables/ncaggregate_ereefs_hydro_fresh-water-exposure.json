@@ -9,6 +9,7 @@
     "legend": {
         "title": { "text": "Hours with salinity below 28 PSU" }
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "x-Rainbow",
     "scaleMin": 0,
     "scaleMax": 20

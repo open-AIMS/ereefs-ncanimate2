@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/bar",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "bar",
+    "legend": {
+        "title": { "text": "Barron" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 125.2900,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.0080,
+        0.0239,
+        0.0798,
+        0.2394
+    ]
+}

@@ -1,8 +1,8 @@
 {
     "_id": "products__ncanimate__ereefs__gbr4_v2__temp-multi-depth_all",
     "version": "2.0",
-    "lastModified": "2020-07-23T16:40:00.000+08:00",
-    "enabled": false,
+    "lastModified": "2025-10-14T08:00:00.000+08:00",
+    "enabled": true,
 
     "regions": [
         "queensland-1",
@@ -55,7 +55,7 @@
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr4-v2_all": {
                     "targetHeight": -1.5,
-                    "variable": "ereefs/hydro/temp"
+                    "variable": "ereefs/hydro/temp-annual"
                 }
             }
         },
@@ -65,7 +65,7 @@
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr4-v2_all": {
                     "targetHeight": -17.75,
-                    "variable": "ereefs/hydro/temp"
+                    "variable": "ereefs/hydro/temp-annual"
                 }
             }
         },
@@ -75,7 +75,7 @@
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr4-v2_all": {
                     "targetHeight": -49,
-                    "variable": "ereefs/hydro/temp"
+                    "variable": "ereefs/hydro/temp-annual"
                 }
             }
         },
@@ -84,8 +84,8 @@
             "title": { "text": "Wind speed" },
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr4-v2_all": {
-                    "variable": "ereefs/hydro/wind",
-                    "arrowVariable": "ereefs/hydro/wind"
+                    "variable": "ereefs/hydro/wind-annual",
+                    "arrowVariable": "ereefs/hydro/wind-annual"
                 }
             }
         }

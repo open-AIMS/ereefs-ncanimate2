@@ -10,7 +10,6 @@
     "workingDirectory": "/tmp/ncanimate/working",
     "paletteDirectoryUri": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/palettes",
     "directoryUri": "${STORAGE_PROTOCOL}${PUBLIC_BUCKET_NAME}/ncanimate/products/${id}",
-    "frameDirectoryUri": "${STORAGE_PROTOCOL}${PUBLIC_BUCKET_NAME}/ncanimate/frames/${id}",
     "timezone": "Australia/Brisbane",
     "videoTimeIncrement": {
         "increment": 1,

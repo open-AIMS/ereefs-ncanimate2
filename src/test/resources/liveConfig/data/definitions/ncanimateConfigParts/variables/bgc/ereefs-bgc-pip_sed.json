@@ -12,6 +12,7 @@
             "fontSize": 15
         }
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue25Red75Rainbow2",
     "scaleMin": 0,
     "scaleMax": 6000

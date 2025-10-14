@@ -9,6 +9,7 @@
     "legend": {
         "title": { "text": "Temperature range (°C)" }
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue50Red50Rainbow",
     "scaleMin": 0,
     "scaleMax": 1.5

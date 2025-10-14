@@ -2,7 +2,7 @@
     "_id": "products__ncanimate__mixed__imos-vs-ereefs-temperature",
     "version": "2.0",
     "lastModified": "2020-09-03T15:00:00.000+08:00",
-    "enabled": true,
+    "enabled": false,
 
     "regions": [
         "queensland-1"
@@ -38,6 +38,10 @@
         },
         "legend": "bottom-left-legend"
     },
+
+    "focusLayers": [
+        "ncaggregate_ereefs-model_gbr4-v2_daily"
+    ],
 
     "panels": [
         {

@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/bur",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "bur",
+    "legend": {
+        "title": { "text": "Burdekin" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 2,
+        "labelMultiplier": 100,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.01,
+        0.03,
+        0.1,
+        0.3
+    ]
+}

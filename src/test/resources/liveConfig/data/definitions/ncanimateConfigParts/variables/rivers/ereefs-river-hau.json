@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/hau",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "hau",
+    "legend": {
+        "title": { "text": "Haughton" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 194.6670,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.0051,
+        0.0154,
+        0.0514,
+        0.1541
+    ]
+}

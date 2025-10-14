@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/pio",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "pio",
+    "legend": {
+        "title": { "text": "Pioneer" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 114.9155,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.0087,
+        0.0261,
+        0.0870,
+        0.2611
+    ]
+}

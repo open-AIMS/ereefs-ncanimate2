@@ -1,0 +1,17 @@
+{
+    "_id": {
+        "id": "ereefs/scenarioComparison/chl_a_sum",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "Chl_a_sum",
+    "legend": {
+        "title": { "text": "Chlorophyll-a (mg Chl m-3)" },
+        "steps": 6
+    },
+    "colourSchemeType": "scale",
+    "colourPaletteName": "BlueRedRainbowChlA_2.5-mg-m-3",
+    "scaleMin": 0,
+    "scaleMax": 2.5
+}

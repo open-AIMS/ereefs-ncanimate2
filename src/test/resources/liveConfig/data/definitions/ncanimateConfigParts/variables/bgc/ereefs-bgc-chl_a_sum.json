@@ -10,6 +10,7 @@
         "title": { "text": "Total Chlorophyll (mg Chl m-3)" },
         "steps": 8
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue25Red75Rainbow2",
     "scaleMin": 0,
     "scaleMax": 1.4

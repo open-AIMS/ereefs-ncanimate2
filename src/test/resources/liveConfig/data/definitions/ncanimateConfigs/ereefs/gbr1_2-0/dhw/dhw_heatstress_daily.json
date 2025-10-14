@@ -1,8 +1,8 @@
 {
     "_id": "products__ncanimate__ereefs__gbr1_2-0__dhw_heatstress_daily",
     "version": "2.0",
-    "lastModified": "2020-12-09T11:30:00.000+08:00",
-    "enabled": true,
+    "lastModified": "2021-02-11T13:00:00.000+08:00",
+    "enabled": false,
 
     "regions": [
         "queensland-1",
@@ -68,32 +68,6 @@
 
     "panels": [
         {
-            "id": "dhw0",
-            "title": {
-                "text": "DHW #0 SSTAARS integrated at ${ctx.targetHeight %.1f}m",
-                "fontSize": 20
-            },
-            "layerOverwrites": {
-                "ncaggregate_ereefs-model_gbr1_2-0_nrt_daily_heatstress": {
-                    "targetHeight": "${ctx.targetHeight}",
-                    "variable": "ereefs/hydro/dhw0_max"
-                }
-            },
-
-            "texts": {
-                "experimental": {
-                    "fontSize": 30,
-                    "fontColour": "#00000066",
-                    "bold": true,
-                    "text": "EXPERIMENTAL",
-                    "position": {
-                        "top": 200,
-                        "right": 30
-                    }
-                }
-            }
-        },
-        {
             "id": "dhw1",
             "title": {
                 "text": "DHW #1 NOAA 4am snapshot at ${ctx.targetHeight %.1f}m",
@@ -103,6 +77,19 @@
                 "ncaggregate_ereefs-model_gbr1_2-0_nrt_daily_heatstress": {
                     "targetHeight": "${ctx.targetHeight}",
                     "variable": "ereefs/hydro/dhw1_max"
+                }
+            }
+        },
+        {
+            "id": "dhw3",
+            "title": {
+                "text": "DHW #3 SSTAARS 4am snapshot at ${ctx.targetHeight %.1f}m",
+                "fontSize": 20
+            },
+            "layerOverwrites": {
+                "ncaggregate_ereefs-model_gbr1_2-0_nrt_daily_heatstress": {
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": "ereefs/hydro/dhw3_max"
                 }
             }
         },

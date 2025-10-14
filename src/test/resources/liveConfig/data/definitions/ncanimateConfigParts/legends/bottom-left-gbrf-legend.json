@@ -29,10 +29,6 @@
     },
     "label": {
         "fontColour": "#00000099",
-        "fontSize": 14,
-        "position": {
-            "left": 5,
-            "bottom": 5
-        }
+        "fontSize": 14
     }
 }

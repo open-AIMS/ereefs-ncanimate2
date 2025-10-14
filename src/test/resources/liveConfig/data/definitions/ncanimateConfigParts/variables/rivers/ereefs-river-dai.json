@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/dai",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "dai",
+    "legend": {
+        "title": { "text": "Daintree" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 203.4042,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.0049,
+        0.0147,
+        0.0492,
+        0.1475
+    ]
+}

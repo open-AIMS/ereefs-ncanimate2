@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "id": "ereefs/hydro/current-annual",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2023-01-24T10:05:00.000+08:00",
+
+    "variableId": "u:v-group",
+    "legend": {
+        "title": { "text": "Current (ms⁻¹)" }
+    },
+    "colourSchemeType": "scale",
+    "colourPaletteName": "Blue38Red62RainbowCurrent",
+    "scaleMin": 0,
+    "scaleMax": 0.6
+}

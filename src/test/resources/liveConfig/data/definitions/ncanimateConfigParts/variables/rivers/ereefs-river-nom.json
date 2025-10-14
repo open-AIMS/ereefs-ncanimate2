@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/nom",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "nom",
+    "legend": {
+        "title": { "text": "Normanby" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 191.5579,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.0052,
+        0.0157,
+        0.0522,
+        0.1566
+    ]
+}

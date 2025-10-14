@@ -1,0 +1,30 @@
+{
+  "_id": {
+    "id": "ereefs/scenarioComparison/secchi_pre-base",
+    "datatype": "VARIABLE"
+  },
+  "lastModified": "2023-03-24T16:00:00.000+10:00",
+  "variableId": "Secchi_pre-base",
+  "legend": {
+    "title": {
+      "text": "Secchi depth (m)"
+    },
+    "steps": 12,
+    "colourBandColourCount": 11
+  },
+  "colourPaletteName": "BlueRedDiverging_discrete-inv",
+  "logarithmic": false,
+  "colourSchemeType": "thresholds",
+  "thresholds": [
+    -8,
+    -5,
+    -2,
+    -1,
+    -0.5,
+    0.5,
+    1,
+    2,
+    5,
+    8
+  ]
+}

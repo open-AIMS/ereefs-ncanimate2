@@ -1,0 +1,17 @@
+{
+    "_id": {
+        "id": "ereefs/hydro/temp-annual",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2023-01-24T10:05:00.000+08:00",
+
+    "variableId": "temp",
+    "legend": {
+        "title": { "text": "Temperature (°C)" },
+        "steps": 8
+    },
+    "colourSchemeType": "scale",
+    "colourPaletteName": "BlueRedRainbowTemp_23-30-degC",
+    "scaleMin": 23,
+    "scaleMax": 30
+}

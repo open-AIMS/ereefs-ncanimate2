@@ -9,6 +9,7 @@
     "legend": {
         "title": { "text": "Waves period (s)" }
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "x-Rainbow",
     "scaleMin": 0,
     "scaleMax": 20

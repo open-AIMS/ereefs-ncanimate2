@@ -1,0 +1,386 @@
+{
+    "_id": "products__ncanimate__ereefs__gbr1_2-0__rivers",
+    "version": "2.0",
+    "lastModified": "2023-01-24T14:12:00.000+08:00",
+    "enabled": false,
+
+    "regions": [
+        "queensland-1",
+        "north-2",
+        "central-2",
+        "south-2",
+        "torres-strait-3",
+        "princess-charlotte-bay-3",
+        "lizard-island-3",
+        "cairns-3",
+        "townsville-3",
+        "whitsundays-3",
+        "broad-sound-3",
+        "fitzroy-3",
+        "hervey-bay-3",
+        "brisbane-3"
+    ],
+
+    "targetHeights": [-2.35],
+
+    "canvas": {
+        "id": "default-canvas",
+        "padding": {
+            "top": 130
+        },
+        "texts": {
+            "frameDate": {
+                "text": "${ctx.frameDateFrom dd-MMM-yyyy}"
+            },
+            "subtitle": {
+                "text": "5 different rivers per panel to reduce plume overlap",
+                "fontSize": 25,
+                "position": {
+                    "top": 66
+                }
+            }
+        }
+    },
+
+    "defaults": {
+        "panel": {
+            "id": "default-panel",
+            "layers": [
+                "ereefs-model_gbr1_2-0_rivers-1",
+                "ereefs-model_gbr1_2-0_rivers-2",
+                "ereefs-model_gbr1_2-0_rivers-3",
+                "ereefs-model_gbr1_2-0_rivers-4",
+                "ereefs-model_gbr1_2-0_rivers-5",
+                "ncaggregate_ereefs-model_gbr1_2-0_daily",
+
+                "world-light",
+                "australia-light",
+                "reefs-light",
+                "coralSea-light",
+                "river-catchments",
+                "GBRMPA_Bounds-light",
+                "rivers-light",
+                "cities-light",
+                "rivers_label_river-tracer"
+            ]
+        },
+        "legend": "bottom-left-legend"
+    },
+
+    "focusLayers": [
+        "ereefs-model_gbr1_2-0_rivers-1"
+    ],
+
+    "panels": [
+        {
+            "id": "salt-1",
+            "margin": {
+                "right": 100
+            },
+            "title": {"text": "Salinity ${ctx.targetHeight %.1f}m"},
+            "layers": [
+                {
+                    "id": "ereefs-model_gbr1_2-0_rivers",
+                    "targetHeight": "${ctx.targetHeight}",
+                    "variable": {
+                        "id": "ereefs/hydro/salt",
+                        "legend": {
+                            "position": { "top": 5, "left": 457 }
+                        }
+                    }
+                },
+                {
+                    "id": "ncaggregate_ereefs-model_gbr1_2-0_daily",
+                    "arrowVariable": {
+                        "id": "ereefs/hydro/wind",
+                        "colourSchemeType": "arrow_thresholds",
+                        "arrowThresholds": [
+                            "#00000022",
+                            "5",
+                            "#00000066",
+                            "10",
+                            "#000000"
+                        ],
+                        "legend": {
+                            "title": { "text": "Wind speed (ms⁻¹)" },
+                            "colourBandHeight": 120,
+                            "position": { "top": 315, "left": 457 }
+                        }
+                    }
+                },
+
+                "world",
+                "australia",
+                "reefs",
+                "coralSea",
+                "GBRMPA_Bounds",
+                "rivers",
+                "cities-light",
+                "rivers_label_river-tracer"
+            ]
+        },
+
+        {
+            "id": "rivers-2",
+            "title": {
+                "text": "% River water in sea water @ ${ctx.targetHeight %.1f}m",
+                "fontSize": 22
+            },
+            "margin": {
+                "right": 120
+            },
+            "backgroundColour": "#FFFFFF",
+            "layerOverwrites": {
+                "ereefs-model_gbr1_2-0_rivers-1": {
+                    "variable": {
+                        "id": "ereefs/river/nom",
+                        "colourPaletteName": "transparentPink",
+                        "legend": {
+                            "position": {
+                                "top": 5,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-2": {
+                    "variable": {
+                        "id": "ereefs/river/mul",
+                        "colourPaletteName": "transparentGreen",
+                        "legend": {
+                            "position": {
+                                "top": 115,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-3": {
+                    "variable": {
+                        "id": "ereefs/river/her",
+                        "colourPaletteName": "transparentBlue",
+                        "legend": {
+                            "position": {
+                                "top": 225,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-4": {
+                    "variable": {
+                        "id": "ereefs/river/pio",
+                        "colourPaletteName": "transparentTeal",
+                        "legend": {
+                            "position": {
+                                "top": 335,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-5": {
+                    "variable": {
+                        "id": "ereefs/river/mar",
+                        "colourPaletteName": "transparentOrange",
+                        "legend": {
+                            "position": {
+                                "top": 445,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "river-catchments": {
+                    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/rbasin_polygon_set1.sld"
+                },
+                "rivers_label_river-tracer": {
+                    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/rivers_label_river-tracers_${ctx.region.id}_set1.sld"
+                }
+            }
+        },
+
+        {
+            "id": "rivers-3",
+            "title": {
+                "text": "% River water in sea water @ ${ctx.targetHeight %.1f}m",
+                "fontSize": 22
+            },
+            "margin": {
+                "right": 120
+            },
+            "backgroundColour": "#FFFFFF",
+            "layerOverwrites": {
+                "ereefs-model_gbr1_2-0_rivers-1": {
+                    "variable": {
+                        "id": "ereefs/river/dai",
+                        "colourPaletteName": "transparentPink",
+                        "legend": {
+                            "position": {
+                                "top": 5,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-2": {
+                    "variable": {
+                        "id": "ereefs/river/jon",
+                        "colourPaletteName": "transparentGreen",
+                        "legend": {
+                            "position": {
+                                "top": 115,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-3": {
+                    "variable": {
+                        "id": "ereefs/river/hau",
+                        "colourPaletteName": "transparentBlue",
+                        "legend": {
+                            "position": {
+                                "top": 225,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-4": {
+                    "variable": {
+                        "id": "ereefs/river/fit",
+                        "colourPaletteName": "transparentTeal",
+                        "legend": {
+                            "position": {
+                                "top": 335,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-5": {
+                    "variable": {
+                        "id": "ereefs/river/bri",
+                        "colourPaletteName": "transparentOrange",
+                        "legend": {
+                            "position": {
+                                "top": 445,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "river-catchments": {
+                    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/rbasin_polygon_set2.sld"
+                },
+                "rivers_label_river-tracer": {
+                    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/rivers_label_river-tracers_${ctx.region.id}_set2.sld"
+                }
+            }
+        },
+
+        {
+            "id": "rivers-4",
+            "title": {
+                "text": "% River water in sea water @ ${ctx.targetHeight %.1f}m",
+                "fontSize": 22
+            },
+            "margin": {
+                "right": 120
+            },
+            "backgroundColour": "#FFFFFF",
+            "layerOverwrites": {
+                "ereefs-model_gbr1_2-0_rivers-1": {
+                    "variable": {
+                        "id": "ereefs/river/bar",
+                        "colourPaletteName": "transparentPink",
+                        "legend": {
+                            "position": {
+                                "top": 5,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-2": {
+                    "variable": {
+                        "id": "ereefs/river/tul",
+                        "colourPaletteName": "transparentGreen",
+                        "legend": {
+                            "position": {
+                                "top": 115,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-3": {
+                    "variable": {
+                        "id": "ereefs/river/bur",
+                        "colourPaletteName": "transparentBlue",
+                        "legend": {
+                            "position": {
+                                "top": 225,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-4": {
+                    "variable": {
+                        "id": "ereefs/river/bnt",
+                        "colourPaletteName": "transparentTeal",
+                        "legend": {
+                            "position": {
+                                "top": 335,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "ereefs-model_gbr1_2-0_rivers-5": {
+                    "variable": {
+                        "id": "ereefs/river/log",
+                        "colourPaletteName": "transparentOrange",
+                        "legend": {
+                            "position": {
+                                "top": 445,
+                                "left": 457
+                            }
+                        }
+                    }
+                },
+                "river-catchments": {
+                    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/rbasin_polygon_set3.sld"
+                },
+                "rivers_label_river-tracer": {
+                    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/rivers_label_river-tracers_${ctx.region.id}_set3.sld"
+                }
+            }
+        }
+    ],
+
+    "render": {
+        "id": "yearly-videos",
+        "definitionId": "products__ncanimate__ereefs__gbr1_2-0__rivers",
+
+        "scale": 1.5,
+
+        "videos": {
+            "mp4Video": {
+                "commandLines": [
+                    "/usr/bin/ffmpeg -y -r \"${ctx.renderFile.fps}\" -i \"${ctx.videoFrameDirectory}/${ctx.frameFilenamePrefix}_%05d.png\" -vcodec libx264 -profile:v baseline -pix_fmt yuv420p -crf 25 -vf \"pad=${ctx.productWidth}:${ctx.productHeight}:${ctx.padding.left}:${ctx.padding.top}:white\" \"${ctx.outputDirectory}/temp_${ctx.outputFilename}\"",
+                    "/usr/bin/qt-faststart \"${ctx.outputDirectory}/temp_${ctx.outputFilename}\" \"${ctx.outputFile}\"",
+                    "rm \"${ctx.outputDirectory}/temp_${ctx.outputFilename}\""
+                ]
+            }
+        },
+
+        "metadata": {
+            "properties": {
+                "targetHeight": "${ctx.targetHeight %.1f}m"
+            }
+        }
+    }
+}

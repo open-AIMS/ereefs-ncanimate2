@@ -1,0 +1,13 @@
+{
+    "_id": {
+        "id": "cities-light",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2022-11-03T16:00:00.000+08:00",
+
+    "datasource": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/layers/World_NE_10m-cities_V3_Ranked_NRM.csv",
+    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/World_NE_10m-cities_V3_Ranked_light_${ctx.region.id}.sld",
+    "type": "CSV",
+    "latitudeColumn": "LATITUDE",
+    "longitudeColumn": "LONGITUDE"
+}

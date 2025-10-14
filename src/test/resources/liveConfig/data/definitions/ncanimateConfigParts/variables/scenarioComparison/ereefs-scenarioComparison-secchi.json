@@ -1,0 +1,18 @@
+{
+  "_id": {
+    "id": "ereefs/scenarioComparison/secchi",
+    "datatype": "VARIABLE"
+  },
+  "lastModified": "2020-09-29T09:00:00.000+08:00",
+  "variableId": "Secchi",
+  "legend": {
+    "title": {
+      "text": "Secchi depth (m)"
+    },
+    "steps": 11
+  },
+  "colourSchemeType": "scale",
+  "colourPaletteName": "RedBlueRainbowSecchi_0-40-m",
+  "scaleMin": 0,
+  "scaleMax": 20
+}

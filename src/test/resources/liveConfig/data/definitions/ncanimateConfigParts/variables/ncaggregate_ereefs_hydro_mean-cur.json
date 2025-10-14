@@ -10,6 +10,7 @@
         "title": { "text": "Current magnitude (ms⁻¹)" },
         "steps": 6
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue50Red50Rainbow",
     "scaleMin": 0,
     "scaleMax": 0.5
