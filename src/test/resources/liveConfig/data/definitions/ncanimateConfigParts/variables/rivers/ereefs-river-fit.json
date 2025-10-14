@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/fit",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "fit",
+    "legend": {
+        "title": { "text": "Fitzroy" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 114.1642,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.0088,
+        0.0263,
+        0.0876,
+        0.2628
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/her",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "her",
+    "legend": {
+        "title": { "text": "Herbert" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 145.4363,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.0069,
+        0.0206,
+        0.0688,
+        0.2063
+    ]
+}

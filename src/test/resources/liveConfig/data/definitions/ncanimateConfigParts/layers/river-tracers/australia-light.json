@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "australia-light",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2022-11-03T16:00:00.000+08:00",
+
+    "datasource": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/layers/AU_GA_GEODATA-TOPO-5M_aus5fgd_r.geojson",
+    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/AU_GA_GEODATA-TOPO-5M_aus5fgd_r-light.sld",
+    "type": "GEOJSON"
+}

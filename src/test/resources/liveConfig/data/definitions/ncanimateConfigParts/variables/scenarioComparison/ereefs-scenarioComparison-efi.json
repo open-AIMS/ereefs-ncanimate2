@@ -1,0 +1,20 @@
+{
+    "_id": {
+        "id": "ereefs/scenarioComparison/efi",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "EFI",
+    "legend": {
+        "title": {
+            "text": "Total Suspended Solids (mg/l)",
+            "fontSize": 15
+        },
+        "labelMultiplier": 1000
+    },
+    "colourSchemeType": "scale",
+    "colourPaletteName": "BlueRedRainbowEFI_0-0.015-kgm-3",
+    "scaleMin": 0,
+    "scaleMax": 0.015
+}

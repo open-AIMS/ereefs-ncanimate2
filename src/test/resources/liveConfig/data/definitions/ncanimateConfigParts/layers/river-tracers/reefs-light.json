@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "reefs-light",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2022-11-03T16:00:00.000+08:00",
+
+    "datasource": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/layers/GBR_AIMS_Reef-boundaries-3M_2016.geojson",
+    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/GBR_AIMS_Reef-boundaries-3M_2016-light.sld",
+    "type": "GEOJSON"
+}

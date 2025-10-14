@@ -1,0 +1,25 @@
+{
+    "_id": {
+        "id": "ereefs/river/tul",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "tul",
+    "legend": {
+        "title": { "text": "Tully" },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 118.9480,
+        "colourBandHeight": 100
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.0084,
+        0.0252,
+        0.0841,
+        0.2522
+    ]
+}

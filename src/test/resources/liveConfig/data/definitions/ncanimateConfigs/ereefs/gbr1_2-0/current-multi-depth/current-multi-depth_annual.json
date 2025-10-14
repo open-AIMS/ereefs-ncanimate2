@@ -1,8 +1,8 @@
 {
     "_id": "products__ncanimate__ereefs__gbr1_2-0__current-multi-depth_annual",
     "version": "2.0",
-    "lastModified": "2020-07-23T16:40:00.000+08:00",
-    "enabled": true,
+    "lastModified": "2023-01-24T10:05:00.000+08:00",
+    "enabled": false,
 
     "regions": [
         "queensland-1",
@@ -62,8 +62,8 @@
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr1_2-0_annual": {
                     "targetHeight": -2.35,
-                    "variable": "ereefs/hydro/current",
-                    "arrowVariable": "ereefs/hydro/current"
+                    "variable": "ereefs/hydro/current-annual",
+                    "arrowVariable": "ereefs/hydro/current-annual"
                 }
             }
         },
@@ -73,8 +73,8 @@
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr1_2-0_annual": {
                     "targetHeight": -18,
-                    "variable": "ereefs/hydro/current",
-                    "arrowVariable": "ereefs/hydro/current"
+                    "variable": "ereefs/hydro/current-annual",
+                    "arrowVariable": "ereefs/hydro/current-annual"
                 }
             }
         },
@@ -84,8 +84,8 @@
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr1_2-0_annual": {
                     "targetHeight": -103,
-                    "variable": "ereefs/hydro/current",
-                    "arrowVariable": "ereefs/hydro/current"
+                    "variable": "ereefs/hydro/current-annual",
+                    "arrowVariable": "ereefs/hydro/current-annual"
                 }
             }
         },
@@ -94,8 +94,8 @@
             "title": { "text": "Wind speed" },
             "layerOverwrites": {
                 "ncaggregate_ereefs-model_gbr1_2-0_annual": {
-                    "variable": "ereefs/hydro/wind",
-                    "arrowVariable": "ereefs/hydro/wind"
+                    "variable": "ereefs/hydro/wind-annual",
+                    "arrowVariable": "ereefs/hydro/wind-annual"
                 }
             }
         }

@@ -9,6 +9,7 @@
     "legend": {
         "title": { "text": "PH (log(mM))" }
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue50Red50Rainbow-inv",
     "scaleMin": 7.9,
     "scaleMax": 8.2

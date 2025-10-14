@@ -1,8 +1,8 @@
 {
     "_id": "products__ncanimate__ereefs__gbr1_2-0__fresh-water-exposure_monthly",
     "version": "2.0",
-    "lastModified": "2020-08-28T09:00:00.000+08:00",
-    "enabled": true,
+    "lastModified": "2023-01-24T10:05:00.000+08:00",
+    "enabled": false,
 
     "regions": [
         "queensland-1",
@@ -50,6 +50,10 @@
         },
         "legend": "bottom-left-legend"
     },
+
+    "focusLayers": [
+        "ncaggregate_fresh-water-exposure_ereefs-model_gbr1_2-0_monthly"
+    ],
 
     "panels": [
         {

@@ -9,6 +9,7 @@
     "legend": {
         "title": { "text": "Fine Sediment (kg m-3)" }
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue50Red50Rainbow",
     "scaleMin": 0,
     "scaleMax": 0.0001

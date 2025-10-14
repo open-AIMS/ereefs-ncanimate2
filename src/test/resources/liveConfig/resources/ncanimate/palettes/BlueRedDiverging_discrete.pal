@@ -1,0 +1,15 @@
+% BlueRedDiverging_discrete
+% Diverging colour ramp from blue to red with white in the middle. For use with data which has a critical middle value (e.g. from -1 to 1)
+% Transition between blue and red occurs 50% along the ramp
+%
+#053061
+#2166ac
+#4393c3
+#92c5de
+#d1e5f0
+#ffffff
+#fddbc7
+#f4a582
+#d6604d
+#b2182b
+#67001f

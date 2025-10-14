@@ -1,0 +1,30 @@
+{
+  "_id": {
+    "id": "ereefs/scenarioComparison/epipar_sg_hindcast-base",
+    "datatype": "VARIABLE"
+  },
+  "lastModified": "2023-03-24T16:00:00.000+10:00",
+  "variableId": "EpiPAR_sg_reduced-base",
+  "legend": {
+    "title": {
+      "text": "Light intensity above seagrass\n(mol photon m-2)"
+    },
+    "steps": 12,
+    "colourBandColourCount": 11
+  },
+  "colourPaletteName": "BlueRedDiverging_discrete-inv",
+  "logarithmic": false,
+  "colourSchemeType": "thresholds",
+  "thresholds": [
+    -16,
+    -8,
+    -4,
+    -2,
+    -1,
+    1,
+    2,
+    4,
+    8,
+    16
+  ]
+}

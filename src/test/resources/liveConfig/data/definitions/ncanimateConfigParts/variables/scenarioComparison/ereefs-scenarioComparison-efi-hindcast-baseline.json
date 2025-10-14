@@ -1,0 +1,32 @@
+{
+  "_id": {
+    "id": "ereefs/scenarioComparison/efi_hindcast-base",
+    "datatype": "VARIABLE"
+  },
+  "lastModified": "2023-03-24T16:00:00.000+10:00",
+  "variableId": "EFI_reduced-base",
+  "legend": {
+    "title": {
+      "text": "Total Suspended Solids (mg/l)",
+      "fontSize": 15
+    },
+    "steps": 12,
+    "colourBandColourCount": 11,
+    "labelMultiplier": 1000
+  },
+  "colourPaletteName": "BlueRedDiverging_discrete",
+  "logarithmic": false,
+  "colourSchemeType": "thresholds",
+  "thresholds": [
+    -0.005,
+    -0.003,
+    -0.001,
+    -0.0005,
+    -0.0001,
+    0.0001,
+    0.0005,
+    0.001,
+    0.003,
+    0.005
+  ]
+}

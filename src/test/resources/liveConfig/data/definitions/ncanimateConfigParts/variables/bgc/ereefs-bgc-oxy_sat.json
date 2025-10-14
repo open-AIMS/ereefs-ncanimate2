@@ -10,6 +10,7 @@
         "title": { "text": "Oxygen saturation percentage" },
         "steps": 9
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue25Red75Rainbow-inv",
     "scaleMin": 30,
     "scaleMax": 110

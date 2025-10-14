@@ -10,6 +10,7 @@
         "title": { "text": "Total alkalinity (mmol m-3)" },
         "steps": 8
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue50Red50Rainbow-inv",
     "scaleMin": 2140,
     "scaleMax": 2280

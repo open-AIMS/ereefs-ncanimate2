@@ -1,0 +1,20 @@
+{
+    "_id": {
+        "id": "ereefs/scenarioComparison/din",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2020-07-23T16:40:00.000+08:00",
+
+    "variableId": "DIN",
+    "legend": {
+        "title": {
+            "text": "Dissolved Inorganic Nitrogen (mg N m-3)",
+            "fontSize": 12
+        },
+        "steps": 6
+    },
+    "colourSchemeType": "scale",
+    "colourPaletteName": "BlueRedRainbowDIN_0-100-mgNm-3",
+    "scaleMin": 0,
+    "scaleMax": 50
+}

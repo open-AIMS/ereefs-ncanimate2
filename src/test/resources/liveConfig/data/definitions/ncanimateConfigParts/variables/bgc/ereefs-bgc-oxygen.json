@@ -10,6 +10,7 @@
         "title": { "text": "Dissolved Oxygen (mg O m-3)" },
         "steps": 5
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue50Red50Rainbow-inv",
     "scaleMin": 4000,
     "scaleMax": 8000

@@ -9,6 +9,7 @@
     "legend": {
         "title": { "text": "Deep seagrass N (g N m-2)" }
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue25Red75Rainbow2",
     "scaleMin": 0,
     "scaleMax": 0.3

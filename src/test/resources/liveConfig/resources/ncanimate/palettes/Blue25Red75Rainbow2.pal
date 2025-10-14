@@ -1,5 +1,5 @@
 % Blue25Red75Rainbow2
-% Generic colourblind safe rainbox colour ramp - optimised for variables that have a lot of small values
+% Generic colourblind safe rainbow colour ramp - optimised for variables that have a lot of small values
 % Transition between blue and red occurs 25% along the ramp
 #1e248a
 #2d34ef

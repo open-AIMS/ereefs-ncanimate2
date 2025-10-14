@@ -1,0 +1,10 @@
+{
+    "_id": {
+        "id": "ereefs-model_gbr4-v2_river_tracing",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2022-11-03T16:00:00.000+08:00",
+
+    "input": "products__ncaggregate__ereefs__gbr4_v2__river_tracing__raw",
+    "type": "NETCDF"
+}

@@ -9,6 +9,7 @@
     "legend": {
         "title": { "text": "Salinity (PSU)" }
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "RedBlueRainbowSalt_24-36-PSU",
     "scaleMin": 24,
     "scaleMax": 36

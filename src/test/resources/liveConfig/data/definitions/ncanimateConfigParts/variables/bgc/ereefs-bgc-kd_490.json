@@ -10,6 +10,7 @@
         "title": { "text": "Attenuation (m-1)" },
         "steps": 6
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue25Red75Rainbow2",
     "scaleMin": 0,
     "scaleMax": 0.2

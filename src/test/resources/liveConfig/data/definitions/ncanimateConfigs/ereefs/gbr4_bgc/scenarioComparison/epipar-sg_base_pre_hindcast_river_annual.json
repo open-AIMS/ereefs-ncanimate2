@@ -1,0 +1,151 @@
+{
+  "_id": "products__ncanimate__ereefs__gbr4_bgc_comparison__epipar-sg_base_pre_hindcast_river_annual",
+  "version": "1.0",
+  "lastModified": "2023-06-16T12:00:00.000+10:00",
+  "enabled": false,
+  "regions": [
+    "queensland-1",
+    "north-2",
+    "central-2",
+    "south-2",
+    "torres-strait-3",
+    "princess-charlotte-bay-3",
+    "lizard-island-3",
+    "cairns-3",
+    "townsville-3",
+    "whitsundays-3",
+    "broad-sound-3",
+    "fitzroy-3",
+    "hervey-bay-3",
+    "brisbane-3"
+  ],
+  "targetHeights": [
+    -1.5
+  ],
+  "canvas": {
+    "id": "default-canvas",
+    "padding": {
+      "top": 138
+    },
+    "texts": {
+      "frameDate": {
+        "text": "${ctx.frameDateFrom yyyy}"
+      },
+      "subtitle": {
+        "text": "Impact of load reductions on light intensity above seagrass at noon.",
+        "fontSize": 25,
+        "position": {
+          "top": 60
+        }
+      }
+    }
+  },
+  "focusLayers": [
+    "ncaggregate_ereefs-model_gbr4_bgc_baseline_annual",
+    "ncaggregate_ereefs-model_gbr4_bgc_preIndustrial-baseline_annual",
+    "ncaggregate_ereefs-model_gbr4_bgc_hindcast-baseline_annual"
+  ],
+  "defaults": {
+    "panel": {
+      "id": "default-panel",
+      "layers": [
+        "ncaggregate_ereefs-model_gbr4_bgc_baseline_annual",
+        "ncaggregate_ereefs-model_gbr4_bgc_preIndustrial-baseline_annual",
+        "ncaggregate_ereefs-model_gbr4_bgc_hindcast-baseline_annual",
+        "ereefs-model_gbr4-v2_river_tracing_annual",
+        "world",
+        "australia",
+        "reefs",
+        "coralSea",
+        "GBRMPA_Bounds",
+        "rivers",
+        "rivers_label",
+        "cities"
+      ],
+      "title": {
+        "position": {
+          "top": 32
+        },
+        "fontSize": 28
+      },
+      "texts": {
+        "subTitle": {
+          "fontSize": 16,
+          "fontColour": "#000000",
+          "bold": false,
+          "position": {
+            "top": -10
+          }
+        }
+      }
+    },
+    "legend": "bottom-left-legend"
+  },
+  "panels": [
+    {
+      "id": "epipar_sg",
+      "title": {
+        "text": "Baseline scenario"
+      },
+      "layerOverwrites": {
+        "ncaggregate_ereefs-model_gbr4_bgc_baseline_annual": {
+          "targetHeight": "${ctx.targetHeight}",
+          "variable": "ereefs/scenarioComparison/epipar_sg"
+        }
+      }
+    },
+    {
+      "id": "epipar_sg_preIndustrial-baseline",
+      "title": {
+        "text": "Pre-industrial"
+      },
+      "texts": {
+        "subTitle": {
+          "text": "Pre-industrial scenario minus baseline scenario"
+        }
+      },
+      "layerOverwrites": {
+        "ncaggregate_ereefs-model_gbr4_bgc_preIndustrial-baseline_annual": {
+          "targetHeight": "${ctx.targetHeight}",
+          "variable": "ereefs/scenarioComparison/epipar_sg_pre-base"
+        }
+      }
+    },
+    {
+      "id": "epipar_sg_hindcast-baseline",
+      "title": {
+        "text": "WQIP-Targets"
+      },
+      "texts": {
+        "subTitle": {
+          "text": "WQIP-Targets scenario minus baseline scenario"
+        }
+      },
+      "layerOverwrites": {
+        "ncaggregate_ereefs-model_gbr4_bgc_hindcast-baseline_annual": {
+          "targetHeight": "${ctx.targetHeight}",
+          "variable": "ereefs/scenarioComparison/epipar_sg_hindcast-base"
+        }
+      }
+    },
+    {
+      "id": "rivers",
+      "title": {
+        "text": "% River water in sea water"
+      },
+      "layerOverwrites": {
+        "ereefs-model_gbr4-v2_river_tracing_annual": {
+          "targetHeight": "${ctx.targetHeight}",
+          "variable": {
+            "id": "ereefs/river/all",
+            "colourPaletteName": "TransparentBlueWithSolidWhite"
+          }
+        }
+      }
+    }
+  ],
+  "render": {
+    "id": "default-maps",
+    "definitionId": "products__ncanimate__ereefs__gbr4_bgc_comparison__epipar-sg_base_pre_hindcast_river"
+  }
+}

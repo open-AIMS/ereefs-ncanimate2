@@ -10,6 +10,7 @@
         "title": { "text": "Coral symbiont Chl (mg Chl m-2)" },
         "steps": 5
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue25Red75Rainbow2",
     "scaleMin": 0,
     "scaleMax": 2

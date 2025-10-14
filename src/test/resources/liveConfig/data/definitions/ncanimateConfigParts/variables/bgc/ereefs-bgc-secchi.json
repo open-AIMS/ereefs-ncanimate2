@@ -10,6 +10,7 @@
         "title": { "text": "Secchi depth (m)" },
         "steps": 9
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue75Red25Rainbow-inv",
     "scaleMin": 0,
     "scaleMax": 40

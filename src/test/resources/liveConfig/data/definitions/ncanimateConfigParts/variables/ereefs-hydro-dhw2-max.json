@@ -10,6 +10,7 @@
         "title": { "text": "°C week" },
         "steps": 5
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue25Red75Rainbow2",
     "scaleMin": 20,
     "scaleMax": 0

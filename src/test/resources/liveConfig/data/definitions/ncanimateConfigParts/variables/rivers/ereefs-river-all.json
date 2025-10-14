@@ -1,0 +1,28 @@
+{
+    "_id": {
+        "id": "ereefs/river/all",
+        "datatype": "VARIABLE"
+    },
+    "lastModified": "2022-11-08T14:00:00.000+08:00",
+
+    "variableId": "all_rivers",
+    "legend": {
+        "title": { 
+          "text": "River water in sea water (%)", 
+          "fontSize": 15
+        },
+        "steps": 6,
+        "colourBandColourCount": 5,
+        "labelPrecision": 0,
+        "labelMultiplier": 100,
+        "colourBandHeight": 300
+    },
+    "logarithmic": false,
+    "colourSchemeType": "thresholds",
+    "thresholds": [
+        0.01,
+        0.03,
+        0.1,
+        0.3
+    ]
+}

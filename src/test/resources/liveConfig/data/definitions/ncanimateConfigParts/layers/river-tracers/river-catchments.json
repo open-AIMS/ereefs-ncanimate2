@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "id": "river-catchments",
+        "datatype": "LAYER"
+    },
+    "lastModified": "2022-11-03T16:00:00.000+08:00",
+
+    "datasource": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/layers/rbasin_polygon.geojson",
+    "style": "${STORAGE_PROTOCOL}${PRIVATE_BUCKET_NAME}/ncanimate/resources/styles/river-tracers/rbasin_polygon_all.sld",
+    "type": "GEOJSON"
+}

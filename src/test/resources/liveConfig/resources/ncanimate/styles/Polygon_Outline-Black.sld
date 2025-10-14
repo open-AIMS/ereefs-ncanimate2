@@ -5,11 +5,11 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <NamedLayer>
-    <Name>Polygon_Outline-Red</Name>
+    <Name>Polygon_Outline-Black</Name>
     <UserStyle>
-      <Name>Polygon_Outline-Red</Name>
-      <Title>Polygon outline (Red)</Title>
-      <Abstract>Shows the outlines of all the polygons in red.</Abstract>
+      <Name>Polygon_Outline-Black</Name>
+      <Title>Polygon outline (Black)</Title>
+      <Abstract>Shows the outlines of all the polygons in black.</Abstract>
       <!-- ================ POLYGONS ================== -->
       <FeatureTypeStyle>
         <Rule>

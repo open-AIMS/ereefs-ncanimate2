@@ -28,6 +28,18 @@ public class NcAnimateTestLive extends DatabaseTestBase {
 
     @Test
     @Ignore
+    public void testGenerate_gbr4v4_all_hydro() throws Exception {
+        this.insertLiveData();
+
+        this.insertInputData_liveData_hydro_gbr4v4_all();
+
+        NcAnimate ncAnimate = this.getNcanimate();
+        ncAnimate.setRegionId("queensland-1");
+        ncAnimate.generateFromProductId("products__ncanimate__ereefs__gbr4_v4__temp-wind-salt-current_all");
+    }
+
+    @Test
+    @Ignore
     public void testGenerate_gbr4_hydro() throws Exception {
         this.insertLiveData();
 
@@ -136,6 +148,13 @@ public class NcAnimateTestLive extends DatabaseTestBase {
                 this.getDatabaseClient(),
                 "products__ncaggregate__ereefs__gbr1_2-0__daily-daily",
                 new File("/home/glafond/Desktop/TMP_INPUT/netcdf/ereefs/gbr1/hydro/daily"));
+    }
+
+    public void insertInputData_liveData_hydro_gbr4v4_all() throws Exception {
+        NcAnimateTestUtils.insertInputDataFromDirectory(
+                this.getDatabaseClient(),
+                "products__ncaggregate__ereefs__gbr4_v4__all-one",
+                new File("/home/glafond/Desktop/TMP_INPUT/netcdf/ereefs/gbr4_v4/hydro/all"));
     }
 
     public void insertInputData_liveData_imos_sst() throws Exception {

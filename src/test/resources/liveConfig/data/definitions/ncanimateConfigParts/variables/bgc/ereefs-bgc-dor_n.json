@@ -13,6 +13,7 @@
         },
         "steps": 8
     },
+    "colourSchemeType": "scale",
     "colourPaletteName": "Blue25Red75Rainbow2",
     "scaleMin": 40,
     "scaleMax": 110
